@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NU ITCS — Program Tree Monitor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.3/dist/mermaid.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: { preflight: false },
+    };
+  </script>
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --glass: rgba(30, 41, 59, 0.65);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --primary: #3b82f6;
+      --accent: #22d3ee;
+      --accent2: #a855f7;
+      --success: #34d399;
+      --warning: #fbbf24;
+      --danger: #f87171;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      background-image:
+        radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.18) 0, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.12) 0, transparent 50%);
+      background-attachment: fixed;
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+    .container { max-width: 1400px; margin: 0 auto; padding: 24px 20px 60px; }
+    h1, h2, h3 { font-weight: 700; }
+    .gradient-text {
+      background: linear-gradient(90deg, var(--primary), var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glass {
+      background: var(--glass);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+      margin-bottom: 24px;
+    }
+    .header { text-align: center; margin-bottom: 32px; }
+    .header p { color: var(--muted); margin-top: 8px; font-size: 1.05rem; }
+    .major-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .major-card {
+      cursor: pointer;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid var(--glass-border);
+      background: rgba(15, 23, 42, 0.5);
+    }
+    .major-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+    .major-card.active {
+      border-color: var(--accent);
+      box-shadow: 0 0 24px rgba(34, 211, 238, 0.25);
+      background: rgba(34, 211, 238, 0.08);
+    }
+    .major-card h3 { font-size: 1.1rem; margin-bottom: 4px; }
+    .major-card .code { color: var(--accent); font-size: 0.85rem; font-weight: 600; }
+    .layout { display: grid; grid-template-columns: 1fr 320px; gap: 24px; }
+    @media (max-width: 1100px) { .layout { grid-template-columns: 1fr; } }
+    .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 20px; }
+    .stat-box {
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      border: 1px solid var(--glass-border);
+    }
+    .stat-box .val { font-size: 1.75rem; font-weight: 800; color: var(--accent); }
+    .stat-box .lbl { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px; }
+    .progress-bar-wrap {
+      height: 10px; background: rgba(15, 23, 42, 0.8); border-radius: 999px; overflow: hidden; margin: 12px 0;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 999px;
+      transition: width 0.4s ease;
+    }
+    .track-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .pill {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--glass-border);
+      background: rgba(15, 23, 42, 0.5);
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: all 0.2s;
+    }
+    .pill.active, .pill:hover { border-color: var(--accent2); background: rgba(168, 85, 247, 0.15); }
+    .tree-controls { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; align-items: center; }
+    .btn {
+      padding: 10px 18px;
+      border-radius: 10px;
+      border: 1px solid var(--glass-border);
+      background: rgba(59, 130, 246, 0.2);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .btn:hover { background: rgba(59, 130, 246, 0.4); border-color: var(--primary); }
+    .btn.active { background: var(--primary); border-color: var(--primary); }
+    .btn-ghost { background: transparent; }
+    .tree-wrap {
+      overflow: auto;
+      max-height: 70vh;
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.4);
+      padding: 20px;
+      border: 1px solid var(--glass-border);
+    }
+    .mermaid { display: flex; justify-content: center; }
+    .legend { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 12px; font-size: 0.85rem; }
+    .legend span { display: flex; align-items: center; gap: 8px; }
+    .dot { width: 12px; height: 12px; border-radius: 50%; }
+    .dot.done { background: var(--success); box-shadow: 0 0 8px var(--success); }
+    .dot.active { background: var(--accent); box-shadow: 0 0 8px var(--accent); }
+    .dot.pending { background: #475569; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--glass-border); }
+    th { color: var(--muted); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; }
+    tr:hover td { background: rgba(255, 255, 255, 0.03); }
+    tr.row-completed { opacity: 0.75; }
+    tr.row-completed td:first-child { color: var(--success); }
+    .status-btns { display: flex; gap: 4px; }
+    .status-btn {
+      width: 28px; height: 28px;
+      border-radius: 6px;
+      border: 1px solid var(--glass-border);
+      background: transparent;
+      cursor: pointer;
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+    .status-btn.s-done { background: rgba(52, 211, 153, 0.3); color: var(--success); border-color: var(--success); }
+    .status-btn.s-progress { background: rgba(34, 211, 238, 0.2); color: var(--accent); border-color: var(--accent); }
+    .catalog-scroll { max-height: 480px; overflow-y: auto; }
+    .sidebar .glass { padding: 18px; }
+    .sidebar h3 { font-size: 0.95rem; margin-bottom: 12px; color: var(--accent); }
+    .sidebar ul { list-style: none; font-size: 0.85rem; color: var(--muted); }
+    .sidebar li { padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .sidebar li strong { color: var(--text); }
+    details { margin-bottom: 12px; }
+    summary { cursor: pointer; font-weight: 600; padding: 8px 0; }
+    .semester-block {
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: 1px solid var(--glass-border);
+    }
+    .semester-block h4 { font-size: 0.9rem; margin-bottom: 8px; color: var(--accent); }
+    .sem-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .sem-tag {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid var(--glass-border);
+      cursor: pointer;
+    }
+    .sem-tag.done { background: rgba(52, 211, 153, 0.2); border-color: var(--success); }
+    .alert {
+      padding: 12px 16px;
+      border-radius: 10px;
+      background: rgba(248, 113, 113, 0.15);
+      border: 1px solid rgba(248, 113, 113, 0.4);
+      color: #fecaca;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+      display: none;
+    }
+    .alert.show { display: block; }
+    .footer-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 32px;
+      padding: 16px 16px 0;
+    }
+    .hidden { display: none !important; }
+    .breakdown-table td:last-child { text-align: right; color: var(--accent); }
+    .import-export { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+    input[type="file"] { display: none; }
+    .category-badge {
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: rgba(168, 85, 247, 0.2);
+      color: var(--accent2);
+    }
+    .prereq-warn { color: var(--warning); font-size: 0.75rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="gradient-text">NU ITCS Program Tree Monitor</h1>
+      <p>Nile University — School of IT &amp; Computer Science · Bylaw July 2025</p>
+    </header>
+
+    <section class="glass">
+      <h2>Select Your Major</h2>
+      <div class="major-grid" id="majorGrid"></div>
+    </section>
+
+    <div id="dashboard" class="hidden">
+      <div class="layout">
+        <main>
+          <section class="glass">
+            <div class="flex flex-wrap items-start justify-between gap-4 mb-2">
+              <div class="min-w-0 flex-1">
+                <h2 id="programTitle">Program Overview</h2>
+                <p id="programMission" style="color:var(--muted);margin:12px 0 0;font-size:0.95rem;"></p>
+              </div>
+              <button type="button" id="resetProgressBtn" onclick="resetProgress()"
+                class="shrink-0 inline-flex items-center justify-center rounded-xl border border-rose-500/50 bg-rose-950/40 px-5 py-2.5 text-sm font-semibold text-rose-300 backdrop-blur-md transition-all duration-200 hover:border-rose-400 hover:bg-rose-900/50 hover:text-rose-200 hover:shadow-[0_0_20px_rgba(244,63,94,0.35)] focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400/50">
+                Reset Progress
+              </button>
+            </div>
+            <div class="stats-row" id="statsRow"></div>
+            <div class="progress-bar-wrap"><div class="progress-bar-fill" id="gpaProgress" style="width:0%"></div></div>
+            <p style="font-size:0.85rem;color:var(--muted);" id="progressLabel">GPA credits: 0 / 132</p>
+            <div class="progress-bar-wrap"><div class="progress-bar-fill" id="totalProgress" style="width:0%;background:linear-gradient(90deg,var(--accent2),var(--accent))"></div></div>
+            <p style="font-size:0.85rem;color:var(--muted);" id="totalLabel">Total degree: 0 / 138</p>
+            <table class="breakdown-table" style="margin-top:16px;">
+              <thead><tr><th>Area</th><th>Credits</th><th>%</th></tr></thead>
+              <tbody id="breakdownBody"></tbody>
+            </table>
+            <div id="trackSection" class="hidden">
+              <h3 style="margin-top:20px;font-size:1rem;">CS Specialization Track</h3>
+              <div class="track-pills" id="trackPills"></div>
+            </div>
+          </section>
+
+          <section class="glass">
+            <h2>Curriculum Map <span style="font-size:0.85rem;color:var(--muted);font-weight:400;">— Mermaid prerequisite tree</span></h2>
+            <div class="tree-controls">
+              <button class="btn active" data-view="full" type="button">Full tree</button>
+              <button class="btn" data-view="core" type="button">Core chain</button>
+              <button class="btn" data-view="math" type="button">Math</button>
+              <button class="btn" data-view="computing" type="button">Computing</button>
+              <button class="btn" data-view="spec" type="button">Specialization</button>
+              <label style="font-size:0.85rem;color:var(--muted);margin-left:8px;">
+                <input type="checkbox" id="hideVirtual"> Hide entry nodes
+              </label>
+              <button class="btn btn-ghost" id="zoomIn" type="button">+</button>
+              <button class="btn btn-ghost" id="zoomOut" type="button">−</button>
+            </div>
+            <p style="font-size:0.8rem;color:var(--muted);margin-bottom:12px;">Click nodes in the diagram or table to cycle: not started → in progress → completed</p>
+            <div id="prereqAlert" class="alert"></div>
+            <div class="tree-wrap" id="treeWrap">
+              <div id="mermaidHost" class="mermaid"></div>
+            </div>
+            <div class="legend">
+              <span><span class="dot done"></span> Completed</span>
+              <span><span class="dot active"></span> In progress</span>
+              <span><span class="dot pending"></span> Not started</span>
+            </div>
+          </section>
+
+          <section class="glass">
+            <h2>Course Catalog</h2>
+            <div class="tree-controls">
+              <select id="filterCategory">
+                <option value="all">All categories</option>
+                <option value="university">University</option>
+                <option value="humanities">Humanities &amp; Social</option>
+                <option value="math">Math &amp; Sciences</option>
+                <option value="basic_computing">Basic Computing</option>
+                <option value="specialization">Specialization</option>
+                <option value="training">Training</option>
+                <option value="project">Graduation Project</option>
+              </select>
+              <select id="filterStatus">
+                <option value="all">All statuses</option>
+                <option value="completed">Completed</option>
+                <option value="in_progress">In progress</option>
+                <option value="not_started">Not started</option>
+              </select>
+            </div>
+            <div class="catalog-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Code</th>
+                    <th>Title</th>
+                    <th>Cr</th>
+                    <th>Category</th>
+                    <th>Prerequisites</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="catalogBody"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="glass">
+            <h2>Suggested Study Plan</h2>
+            <div id="studyPlanHost"></div>
+          </section>
+        </main>
+
+        <aside class="sidebar">
+          <div class="glass">
+            <h3>Graduation Requirements</h3>
+            <ul id="gradList"></ul>
+          </div>
+          <div class="glass">
+            <h3>Registration (Art. 10)</h3>
+            <ul>
+              <li><strong>CGPA ≥ 3.3:</strong> up to 21 cr/semester</li>
+              <li><strong>CGPA 2.0–3.3:</strong> up to 18 cr</li>
+              <li><strong>CGPA &lt; 2.0:</strong> up to 12 cr</li>
+              <li><strong>Min registration:</strong> 9 cr (main semesters)</li>
+              <li><strong>Summer:</strong> max 6 cr (9 for graduation)</li>
+            </ul>
+          </div>
+          <div class="glass">
+            <h3>Study Duration (Art. 8)</h3>
+            <ul>
+              <li>Minimum: <strong>7 regular semesters</strong></li>
+              <li>Maximum: <strong>10 years</strong> (20 main semesters)</li>
+            </ul>
+          </div>
+          <div class="glass">
+            <h3>Course Codes (Art. 30)</h3>
+            <ul>
+              <li><strong>CSCI</strong> — Computer Science</li>
+              <li><strong>AIS</strong> — AI Sciences</li>
+              <li><strong>BMD</strong> — Biomedical Informatics</li>
+              <li><strong>CSEC</strong> — Cybersecurity</li>
+              <li><strong>MATH</strong> — Mathematics</li>
+            </ul>
+          </div>
+          <div class="glass">
+            <h3>Your Progress</h3>
+            <div class="import-export">
+              <button class="btn" id="exportBtn" type="button">Export JSON</button>
+              <button class="btn btn-ghost" id="importBtn" type="button">Import</button>
+              <input type="file" id="importFile" accept=".json">
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <p class="footer-note">
+      Data transcribed from ITCS Undergraduate Bylaw (July 2025). Prerequisite charts rebuilt from course tables.
+      Always confirm with your academic advisor and official registrar. Training (6 cr) is pass/fail and excluded from GPA.
+    </p>
+
+    <div class="flex justify-center px-4 pb-12 pt-6">
+      <aside class="flex w-full max-w-md flex-col items-center rounded-2xl bg-[#1a1b1e] p-8 shadow-xl ring-1 ring-white/5" aria-labelledby="author-card-title">
+        <div class="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600 text-xl font-bold text-white shadow-lg shadow-purple-500/45 ring-2 ring-blue-400/30" aria-hidden="true">
+          MS
+        </div>
+        <h2 id="author-card-title" class="mt-6 text-center text-2xl font-bold text-white">Mostafa Saber</h2>
+        <p class="mt-2 text-center text-gray-400">CS Student</p>
+        <div class="mt-8 flex flex-row flex-wrap items-center justify-center gap-4">
+          <a href="https://www.linkedin.com/in/mostafa-mohamed-965343390/" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 rounded-xl bg-[#0a66c2] px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#0959aa] hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300">
+            <svg class="h-5 w-5 shrink-0 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/MostafaSaber-25" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 rounded-xl bg-[#333333] px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#454545] focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400">
+            <svg class="h-5 w-5 shrink-0 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+<script>
+(function () {
+  'use strict';
+
+  const STORAGE_KEY = 'nu_itcs_progress_v1';
+  const VIRTUAL_CODES = ['HS', 'MATH_SEC', 'SOPH', 'JUN', 'SR87'];
+
+  function c(code, titleEn, credits, category, prereqs, opts = {}) {
+    return {
+      code,
+      titleEn,
+      credits: credits ?? 3,
+      category,
+      prereqs: prereqs || [],
+      prereqText: opts.prereqText || '',
+      elective: !!opts.elective,
+      trackOnly: opts.trackOnly || null,
+      pool: opts.pool || null,
+      countsGpa: category !== 'training',
+      note: opts.note || ''
+    };
+  }
+
+  const SHARED_CORE = [
+    c('ENGL 002', 'English I', 0, 'university', ['HS'], { prereqText: 'B2/C1 placement' }),
+    c('ENGL 003', 'English II', 0, 'university', ['ENGL 002']),
+    c('ENGL 201', 'Scientific Writing', 3, 'university', ['ENGL 003']),
+    c('ENGL 202', 'Communication and Presentation Skills', 3, 'university', ['ENGL 201']),
+    c('HUMA 1xx', 'Humanities Elective 1', 3, 'humanities', ['HS'], { elective: true, note: 'Select 6 cr from HUMA courses' }),
+    c('HUMA 2xx', 'Humanities Elective 2', 3, 'humanities', ['HS'], { elective: true }),
+    c('SSCI 1xx', 'Social Science Elective 1', 3, 'humanities', ['HS'], { elective: true, note: 'Select 6 cr from SSCI' }),
+    c('SSCI 2xx', 'Social Science Elective 2', 3, 'humanities', ['HS'], { elective: true }),
+    c('SSCI 301', 'Project Management', 3, 'humanities', ['JUN']),
+    c('PHYS 101', 'Physics I', 4, 'math', ['HS']),
+    c('MATH 120', 'Pre-calculus Mathematics', 0, 'math', ['MATH_SEC'], { note: 'Science section only' }),
+    c('MATH 121', 'Calculus I and Analytical Geometry', 3, 'math', ['HS'], { note: 'Math section or equivalent' }),
+    c('MATH 122', 'Calculus II', 3, 'math', ['MATH 121']),
+    c('MATH 113', 'Discrete Mathematics', 3, 'math', ['MATH 120', 'HS'], { note: 'MATH 120 OR high school math' }),
+    c('MATH 202', 'Probability and Statistics', 3, 'math', ['MATH 121']),
+    c('MATH 223', 'Differential Equations', 3, 'math', ['MATH 122']),
+    c('MATH 321', 'Linear Algebra', 3, 'math', ['MATH 121']),
+    c('ECEN 111', 'Electronics and Circuits', 3, 'math', ['PHYS 101']),
+    c('CSCI 101', 'Intro to Computational Thinking', 3, 'basic_computing', ['HS']),
+    c('CSCI 102', 'Fundamentals of Computing I', 4, 'basic_computing', ['HS']),
+    c('CSCI 103', 'Fundamentals of Computing II', 4, 'basic_computing', ['CSCI 102']),
+    c('CSCI 204', 'Data Structures and Algorithms', 3, 'basic_computing', ['CSCI 103']),
+    c('CSCI 211', 'Logic Design', 3, 'basic_computing', ['ECEN 111']),
+    c('CSCI 212', 'Computer Architecture', 3, 'basic_computing', ['CSCI 211']),
+    c('CSCI 221', 'Database Systems', 3, 'basic_computing', ['CSCI 103']),
+    c('CSCI 231', 'Analysis and Design of Algorithms', 3, 'basic_computing', ['CSCI 204']),
+    c('CSCI 313', 'Operating Systems', 3, 'basic_computing', ['CSCI 212']),
+    c('CSCI 321', 'Software Engineering', 3, 'basic_computing', ['CSCI 103']),
+    c('CSCI 341', 'Introduction to Computer Networks', 3, 'basic_computing', ['CSCI 231']),
+    c('AIS 201', 'Introduction to Artificial Intelligence', 3, 'basic_computing', ['CSCI 204', 'MATH 202']),
+    c('HS', 'High School / Entry', 0, 'university', [], { note: 'Virtual node' }),
+    c('MATH_SEC', 'Science Section (HS)', 0, 'math', ['HS'], { note: 'Virtual' }),
+    c('SOPH', 'Sophomore Standing', 0, 'training', ['HS'], { note: 'Virtual' }),
+    c('JUN', 'Junior Standing', 0, 'training', ['SOPH'], { note: 'Virtual' }),
+    c('SR87', '87+ Credits Completed', 0, 'project', ['JUN'], { note: 'Virtual' })
+  ];
+
+  const CS_SPEC = [
+    c('CSCI 306', 'Web and Mobile Development', 3, 'specialization', ['CSCI 103']),
+    c('CSCI 331', 'Introduction to Data Science', 3, 'specialization', ['MATH 202']),
+    c('CSCI 333', 'Big Data Analytics', 3, 'specialization', ['CSCI 221', 'CSCI 331']),
+    c('CSCI 351', 'Digital Image Processing', 3, 'specialization', ['CSCI 204']),
+    c('CSCI 442', 'Cloud Computing and IoT', 3, 'specialization', ['CSCI 341']),
+    c('CSCI 471', 'Theory of Computation and Compiler Design', 3, 'specialization', ['MATH 113', 'CSCI 231']),
+    c('CSCI 472', 'Introduction to Parallel Computing', 3, 'specialization', ['CSCI 313']),
+    c('AIS 301', 'Machine Learning', 3, 'specialization', ['AIS 201']),
+    c('CSEC 211', 'Introduction to Cybersecurity', 3, 'specialization', ['CSCI 101', 'CSCI 204']),
+    c('CSCI 327', 'Data Warehouses', 3, 'specialization', ['CSCI 221'], { elective: true, trackOnly: 'dea' }),
+    c('AIS 331', 'Data Mining and Analytics', 3, 'specialization', ['CSCI 221', 'CSCI 331'], { elective: true, trackOnly: 'dea' }),
+    c('CSCI 322', 'Advanced Database Systems', 3, 'specialization', ['CSCI 221'], { elective: true, trackOnly: 'dea' }),
+    c('CSCI 425', 'Information Retrieval', 3, 'specialization', ['CSCI 204'], { elective: true, trackOnly: 'dea' }),
+    c('CSCI 434', 'Selected Topics in Data Engineering', 3, 'specialization', ['CSCI 333'], { elective: true, trackOnly: 'dea' }),
+    c('AIS 302', 'Deep Learning', 3, 'specialization', ['AIS 301'], { elective: true }),
+    c('AIS 403', 'Computational Intelligence', 3, 'specialization', ['AIS 301'], { elective: true }),
+    c('CSCI 352', 'Computer Graphics and Visualization', 3, 'specialization', ['MATH 321', 'CSCI 102'], { trackOnly: 'media' }),
+    c('CSCI 453', 'Computer Vision', 3, 'specialization', ['AIS 301', 'CSCI 351'], { trackOnly: 'media' }),
+    c('CSCI 381', 'Digital Signal Processing', 3, 'specialization', ['MATH 223'], { elective: true, trackOnly: 'media' }),
+    c('CSCI 414', 'Embedded Systems', 3, 'specialization', ['CSCI 212'], { elective: true, trackOnly: 'media' }),
+    c('CSCI 454', 'Human Computer Interaction', 3, 'specialization', ['CSCI 352'], { elective: true, trackOnly: 'media' }),
+    c('CSCI 455', 'Mixed and Augmented Reality', 3, 'specialization', ['CSCI 352'], { elective: true, trackOnly: 'media' }),
+    c('CSCI 456', 'Serious Computer Games', 3, 'specialization', ['CSCI 352', 'AIS 301'], { elective: true, trackOnly: 'media' }),
+    c('CSCI 457', 'Selected Topics in Media Informatics', 3, 'specialization', ['CSCI 351'], { elective: true, trackOnly: 'media' }),
+    c('CSCI 422', 'Software Testing', 3, 'specialization', ['CSCI 321'], { trackOnly: 'se' }),
+    c('CSCI 423', 'System Analysis and Design', 3, 'specialization', ['CSCI 321'], { trackOnly: 'se' }),
+    c('CSCI 424', 'Enterprise Architecture', 3, 'specialization', ['CSCI 321'], { elective: true, trackOnly: 'se' }),
+    c('CSCI 426', 'Software Quality Assurance', 3, 'specialization', ['CSCI 321'], { elective: true, trackOnly: 'se' }),
+    c('CSCI 427', 'Selected Topics in Software Engineering', 3, 'specialization', ['CSCI 321'], { elective: true, trackOnly: 'se' }),
+    c('CSEC 422', 'Secure Code Development', 3, 'specialization', ['CSEC 211', 'CSCI 306'], { elective: true, trackOnly: 'se' }),
+    c('CSCI 361', 'Introduction to Quantum Computing', 3, 'specialization', ['CSCI 212', 'CSCI 231'], { trackOnly: 'qc' }),
+    c('CSCI 461', 'Quantum Computer Architecture', 3, 'specialization', ['CSCI 361'], { trackOnly: 'qc' }),
+    c('CSCI 462', 'Distributed Quantum Computing', 3, 'specialization', ['CSCI 461'], { elective: true, trackOnly: 'qc' }),
+    c('CSCI 463', 'Quantum Implementation Technologies', 3, 'specialization', ['CSCI 361'], { elective: true, trackOnly: 'qc' }),
+    c('CSCI 464', 'Quantum Information Systems', 3, 'specialization', ['CSCI 361'], { elective: true, trackOnly: 'qc' }),
+    c('CSCI 465', 'Adiabatic Quantum Computing', 3, 'specialization', ['CSCI 361'], { elective: true, trackOnly: 'qc' }),
+    c('CSCI 466', 'Selected Topics in Quantum Computing', 3, 'specialization', ['CSCI 361'], { elective: true, trackOnly: 'qc' }),
+    c('CSEC 451', 'Cybersecurity for Quantum Computing', 3, 'specialization', ['CSCI 361'], { elective: true, trackOnly: 'qc' }),
+    c('AIS 407', 'Quantum Machine Learning', 3, 'specialization', ['CSCI 361', 'AIS 301'], { elective: true, trackOnly: 'qc' }),
+    c('CSCI 291', 'Industrial/Research Training I', 3, 'training', ['SOPH'], { countsGpa: false }),
+    c('CSCI 391', 'Industrial/Research Training II', 3, 'training', ['JUN'], { countsGpa: false }),
+    c('CSCI 493', 'Senior Project I', 3, 'project', ['SR87']),
+    c('CSCI 494', 'Senior Project II', 3, 'project', ['CSCI 493'])
+  ];
+
+  const AI_SPEC = [
+    c('AIS 301', 'Machine Learning', 3, 'specialization', ['AIS 201']),
+    c('AIS 302', 'Deep Learning', 3, 'specialization', ['AIS 301']),
+    c('AIS 323', 'Optimization Techniques', 3, 'specialization', ['AIS 301', 'MATH 321']),
+    c('AIS 401', 'Deep Learning for NLP and LLMs', 3, 'specialization', ['AIS 302']),
+    c('AIS 402', 'Deep Learning for Computer Vision', 3, 'specialization', ['AIS 302', 'CSCI 351']),
+    c('AIS 460', 'Introduction to Autonomous Robotics', 3, 'specialization', ['AIS 201']),
+    c('CSCI 331', 'Introduction to Data Science', 3, 'specialization', ['MATH 202']),
+    c('CSCI 333', 'Big Data Analytics', 3, 'specialization', ['CSCI 221', 'CSCI 331']),
+    c('CSCI 351', 'Digital Image Processing', 3, 'specialization', ['CSCI 204']),
+    c('CSCI 471', 'Theory of Computation and Compilers', 3, 'specialization', ['MATH 113', 'CSCI 231']),
+    c('AIS 331', 'Data Mining and Analytics', 3, 'specialization', ['CSCI 221', 'CSCI 331'], { elective: true }),
+    c('AIS 332', 'Knowledge Based and Expert Systems', 3, 'specialization', ['AIS 201'], { elective: true }),
+    c('AIS 333', 'Intelligent Decision Support Systems', 3, 'specialization', ['AIS 301'], { elective: true }),
+    c('AIS 351', 'Programming Numerical Methods', 3, 'specialization', ['CSCI 103'], { elective: true }),
+    c('AIS 403', 'Computational Intelligence', 3, 'specialization', ['AIS 301'], { elective: true }),
+    c('AIS 404', 'Deep Reinforcement Learning', 3, 'specialization', ['AIS 302'], { elective: true }),
+    c('AIS 405', 'Machine Learning Systems Design (MLOps)', 3, 'specialization', ['AIS 301'], { elective: true }),
+    c('AIS 406', 'Selected Topics in AI', 3, 'specialization', ['AIS 301'], { elective: true }),
+    c('AIS 407', 'Quantum Machine Learning', 3, 'specialization', ['CSCI 361', 'AIS 301'], { elective: true }),
+    c('CSCI 361', 'Introduction to Quantum Computing', 3, 'specialization', ['CSCI 212', 'CSCI 231'], { elective: true }),
+    c('CSCI 423', 'System Analysis and Design', 3, 'specialization', ['CSCI 321'], { elective: true }),
+    c('CSCI 434', 'Selected Topics in Data Engineering', 3, 'specialization', ['CSCI 333'], { elective: true }),
+    c('CSCI 442', 'Cloud Computing and IoT', 3, 'specialization', ['CSCI 341'], { elective: true }),
+    c('CSCI 472', 'Parallel Computing', 3, 'specialization', ['CSCI 313'], { elective: true }),
+    c('CSCI 474', 'High Performance Computing', 3, 'specialization', ['CSCI 212'], { elective: true }),
+    c('CSEC 211', 'Introduction to Cybersecurity', 3, 'specialization', ['CSCI 101', 'CSCI 204'], { elective: true }),
+    c('AIS 291', 'Industrial/Research Training I', 3, 'training', ['SOPH'], { countsGpa: false }),
+    c('AIS 391', 'Industrial/Research Training II', 3, 'training', ['JUN'], { countsGpa: false }),
+    c('AIS 493', 'Senior Project I', 3, 'project', ['SR87']),
+    c('AIS 494', 'Senior Project II', 3, 'project', ['AIS 493'])
+  ];
+
+  const BMD_SPEC = [
+    c('BMD 101', 'Biology and Genetics', 3, 'specialization', ['HS']),
+    c('BMD 102', 'Biochemistry and Molecular Biology', 3, 'specialization', ['BMD 101'], { note: 'Or concurrent with BMD 101' }),
+    c('BMD 203', 'Human Physiology and Anatomy', 3, 'specialization', ['BMD 101', 'BMD 102']),
+    c('BMD 241', 'Logic Design and Computer Architecture', 3, 'basic_computing', ['PHYS 101']),
+    c('BMD 211', 'Bioinformatics I', 3, 'specialization', ['CSCI 231']),
+    c('BMD 321', 'Clinical Information Systems', 3, 'specialization', ['CSCI 221', 'CSCI 341']),
+    c('BMD 323', 'Biomedical Data Acquisition', 3, 'specialization', ['BMD 203', 'CSCI 381']),
+    c('BMD 431', 'Medical Imaging Informatics', 3, 'specialization', ['CSCI 351']),
+    c('CSCI 331', 'Introduction to Data Science', 3, 'specialization', ['MATH 202']),
+    c('CSCI 351', 'Digital Image Processing', 3, 'specialization', ['CSCI 204']),
+    c('CSCI 381', 'Digital Signal Processing', 3, 'specialization', ['MATH 303', 'MATH 122'], { note: 'MATH 303 per BMD bylaw' }),
+    c('MATH 303', 'Numerical Methods and Differential Equations', 3, 'math', ['MATH 122']),
+    c('AIS 305', 'Machine Learning for Biomedical Applications', 3, 'specialization', ['AIS 201']),
+    c('CSCI 313', 'Operating Systems', 3, 'basic_computing', ['BMD 241']),
+    c('CSCI 471', 'Theory of Computation', 3, 'specialization', ['MATH 113', 'CSCI 231']),
+    c('BMD 312', 'Bioinformatics II', 3, 'specialization', ['BMD 211'], { elective: true }),
+    c('BMD 313', 'Biomedical Statistics', 3, 'specialization', ['CSCI 331', 'BMD 211'], { elective: true }),
+    c('BMD 414', 'Structural Bioinformatics', 3, 'specialization', ['BMD 102', 'BMD 211'], { elective: true }),
+    c('BMD 415', 'Selected Topics in Biomedical Informatics', 3, 'specialization', ['BMD 211'], { elective: true }),
+    c('CSCI 333', 'Big Data Analytics', 3, 'specialization', ['CSCI 221', 'CSCI 331'], { elective: true }),
+    c('BMD 291', 'Industrial/Research Training I', 3, 'training', ['SOPH'], { countsGpa: false }),
+    c('BMD 391', 'Industrial/Research Training II', 3, 'training', ['JUN'], { countsGpa: false }),
+    c('BMD 493', 'Senior Project I', 3, 'project', ['SR87']),
+    c('BMD 494', 'Senior Project II', 3, 'project', ['BMD 493'])
+  ];
+
+  const CSEC_SPEC = [
+    c('CSEC 211', 'Introduction to Cybersecurity', 3, 'specialization', ['CSCI 101', 'CSCI 204']),
+    c('CSEC 311', 'Introduction to Cryptography', 3, 'specialization', ['CSEC 211', 'CSCI 231']),
+    c('CSEC 312', 'Blockchain Applications', 3, 'specialization', ['CSEC 311']),
+    c('CSEC 321', 'Operating Systems Security', 3, 'specialization', ['CSEC 211', 'CSCI 313']),
+    c('CSEC 341', 'Network Security Fundamentals', 3, 'specialization', ['CSCI 341', 'CSEC 211']),
+    c('CSEC 431', 'Fundamentals of Digital Forensics', 3, 'specialization', ['CSCI 351', 'CSEC 321']),
+    c('CSEC 432', 'Basics of Ethical Hacking', 3, 'specialization', ['AIS 201', 'CSEC 341']),
+    c('CSEC 433', 'Incident Response and Malware Analysis', 3, 'specialization', ['AIS 201', 'CSEC 341']),
+    c('CSCI 351', 'Digital Image Processing', 3, 'basic_computing', ['CSCI 204']),
+    c('CSEC 331', 'Hardware Security', 3, 'specialization', ['CSEC 211', 'CSCI 212'], { elective: true }),
+    c('CSEC 413', 'Advanced Cryptography', 3, 'specialization', ['CSEC 311'], { elective: true }),
+    c('CSEC 421', 'Mobile Applications Security', 3, 'specialization', ['CSCI 306', 'CSEC 321'], { elective: true }),
+    c('CSEC 422', 'Secure Code Development', 3, 'specialization', ['CSEC 211', 'CSCI 306'], { elective: true }),
+    c('CSEC 423', 'Security Auditing and Compliance', 3, 'specialization', ['CSEC 321'], { elective: true }),
+    c('CSEC 441', 'Wireless Networks and IoT Security', 3, 'specialization', ['CSEC 341'], { elective: true }),
+    c('CSEC 442', 'Cloud Computing Security', 3, 'specialization', ['CSCI 442'], { elective: true }),
+    c('CSEC 443', 'Web Applications Security', 3, 'specialization', ['CSEC 321'], { elective: true }),
+    c('CSEC 451', 'Cybersecurity for Quantum Computing', 3, 'specialization', ['CSCI 361'], { elective: true }),
+    c('CSEC 461', 'Policies, Regulations, and Ethics', 3, 'specialization', ['CSEC 211'], { elective: true }),
+    c('CSEC 471', 'Selected Topics in Cybersecurity', 3, 'specialization', ['CSEC 211'], { elective: true }),
+    c('CSCI 306', 'Web and Mobile Development', 3, 'specialization', ['CSCI 103'], { elective: true, pool: 'general' }),
+    c('CSCI 331', 'Introduction to Data Science', 3, 'specialization', ['MATH 202'], { elective: true, pool: 'general' }),
+    c('CSCI 442', 'Cloud Computing and IoT', 3, 'specialization', ['CSCI 341'], { elective: true, pool: 'general' }),
+    c('AIS 301', 'Machine Learning', 3, 'specialization', ['AIS 201'], { elective: true, pool: 'general' }),
+    c('CSEC 291', 'Industrial/Research Training I', 3, 'training', ['SOPH'], { countsGpa: false }),
+    c('CSEC 391', 'Industrial/Research Training II', 3, 'training', ['JUN'], { countsGpa: false }),
+    c('CSEC 493', 'Senior Project I', 3, 'project', ['SR87']),
+    c('CSEC 494', 'Senior Project II', 3, 'project', ['CSEC 493'])
+  ];
+
+  const CREDIT_BREAKDOWN = [
+    { area: 'University Requirements', credits: 6, pct: 4 },
+    { area: 'Humanities & Social Sciences', credits: 15, pct: 11 },
+    { area: 'Math & Basic Sciences', credits: 25, pct: 18 },
+    { area: 'Basic Computing Sciences', credits: 38, pct: 28 },
+    { area: 'Applied / Specialization', credits: 42, pct: 31 },
+    { area: 'Training (pass/fail)', credits: 6, pct: 4 },
+    { area: 'Graduation Project', credits: 6, pct: 4 }
+  ];
+
+  const CS_TRACKS = [
+    { id: 'dea', nameEn: 'Data Engineering & Analytics', compulsory: ['CSCI 327', 'AIS 331'], electives: ['CSCI 322', 'CSCI 425', 'CSCI 434', 'AIS 302', 'AIS 403', 'CSCI 361'] },
+    { id: 'media', nameEn: 'Media Informatics', compulsory: ['CSCI 352', 'CSCI 453'], electives: ['CSCI 381', 'CSCI 414', 'CSCI 454', 'CSCI 455', 'CSCI 456', 'CSCI 457', 'AIS 302'] },
+    { id: 'se', nameEn: 'Software Engineering', compulsory: ['CSCI 422', 'CSCI 423'], electives: ['CSCI 322', 'CSCI 424', 'CSCI 426', 'CSCI 427', 'CSEC 422', 'CSCI 361'] },
+    { id: 'qc', nameEn: 'Quantum Computing', compulsory: ['CSCI 361', 'CSCI 461'], electives: ['CSCI 462', 'CSCI 463', 'CSCI 464', 'CSCI 465', 'CSCI 466', 'CSEC 451', 'AIS 407'] }
+  ];
+
+  const CS_STUDY = [
+    { label: 'Year 1 — Semester 1', courses: ['MATH 121', 'PHYS 101', 'CSCI 101', 'CSCI 102', 'ENGL 002', 'HUMA 1xx'] },
+    { label: 'Year 1 — Semester 2', courses: ['MATH 122', 'MATH 113', 'ECEN 111', 'CSCI 103', 'ENGL 003'] },
+    { label: 'Year 2 — Semester 3', courses: ['MATH 202', 'MATH 223', 'CSCI 204', 'CSCI 211', 'CSCI 221', 'ENGL 201'] },
+    { label: 'Year 2 — Semester 4', courses: ['MATH 321', 'CSCI 231', 'CSCI 212', 'AIS 201', 'ENGL 202'] },
+    { label: 'Year 2 — Summer', courses: ['CSCI 291'] },
+    { label: 'Year 3 — Semester 5', courses: ['HUMA 2xx', 'CSCI 313', 'CSEC 211', 'CSCI 321', 'CSCI 351', 'CSCI 306', 'SSCI 1xx'] },
+    { label: 'Year 3 — Semester 6', courses: ['AIS 301', 'CSCI 331', 'CSCI 341', 'CSCI 333', 'SSCI 301'] },
+    { label: 'Year 3 — Summer', courses: ['CSCI 391'] },
+    { label: 'Year 4 — Semester 7', courses: ['SSCI 2xx', 'CSCI 442', 'CSCI 471', 'CSCI 3xx track', 'CSCI 4xx elective'] },
+    { label: 'Year 4 — Semester 8', courses: ['CSCI 472', 'CSCI 493', 'CSCI 494', 'CSCI 4xx electives'] }
+  ];
+
+  const AI_STUDY = [
+    { label: 'Year 1 — Semester 1', courses: ['MATH 121', 'PHYS 101', 'CSCI 101', 'CSCI 102', 'ENGL 002', 'HUMA 1xx'] },
+    { label: 'Year 1 — Semester 2', courses: ['MATH 122', 'MATH 113', 'ECEN 111', 'CSCI 103', 'ENGL 003'] },
+    { label: 'Year 2 — Semester 3', courses: ['MATH 202', 'MATH 223', 'CSCI 204', 'CSCI 211', 'CSCI 221'] },
+    { label: 'Year 2 — Semester 4', courses: ['MATH 321', 'CSCI 231', 'CSCI 212', 'AIS 201', 'ENGL 201', 'ENGL 202'] },
+    { label: 'Year 3+', courses: ['AIS 301', 'AIS 302', 'AIS 401', 'AIS 402', 'CSCI 331', 'CSCI 333', 'CSCI 351', 'CSCI 471', 'AIS electives', 'AIS 493', 'AIS 494'] }
+  ];
+
+  function mergeCourses(shared, spec) {
+    const map = new Map();
+    [...shared, ...spec].forEach(co => {
+      if (!map.has(co.code)) map.set(co.code, { ...co });
+      else Object.assign(map.get(co.code), co);
+    });
+    return Array.from(map.values());
+  }
+
+  const PROGRAMS = {
+    cs: {
+      id: 'cs',
+      nameEn: 'Computer Science',
+      mission: 'Excellence in IT industries with strong computing foundations and four specialization tracks: Data Engineering, Media Informatics, Software Engineering, and Quantum Computing.',
+      creditBreakdown: CREDIT_BREAKDOWN,
+      graduation: { total: 138, gpaCredits: 132, minCGPA: 2.0, minSemesters: 7, trainingWeeks: 4 },
+      tracks: CS_TRACKS,
+      courses: mergeCourses(SHARED_CORE, CS_SPEC),
+      studyPlan: CS_STUDY
+    },
+    ai: {
+      id: 'ai',
+      nameEn: 'Artificial Intelligence',
+      mission: 'Prepare specialists in AI, machine learning, deep learning, NLP, computer vision, and data science with strong theoretical and practical foundations.',
+      creditBreakdown: CREDIT_BREAKDOWN,
+      graduation: { total: 138, gpaCredits: 132, minCGPA: 2.0, minSemesters: 7, trainingWeeks: 4 },
+      tracks: null,
+      courses: mergeCourses(SHARED_CORE, AI_SPEC),
+      studyPlan: AI_STUDY
+    },
+    bmd: {
+      id: 'bmd',
+      nameEn: 'Biomedical Informatics',
+      mission: 'Integrate computing, bioinformatics, clinical systems, and medical data analytics for healthcare and life sciences.',
+      creditBreakdown: CREDIT_BREAKDOWN,
+      graduation: { total: 138, gpaCredits: 132, minCGPA: 2.0, minSemesters: 7, trainingWeeks: 4 },
+      tracks: null,
+      courses: mergeCourses(SHARED_CORE.filter(x => !['CSCI 211', 'CSCI 212'].includes(x.code)), BMD_SPEC),
+      studyPlan: AI_STUDY
+    },
+    csec: {
+      id: 'csec',
+      nameEn: 'Cybersecurity',
+      mission: 'Develop graduates capable of protecting information systems through cryptography, network security, forensics, and secure software practices.',
+      creditBreakdown: CREDIT_BREAKDOWN,
+      graduation: { total: 138, gpaCredits: 132, minCGPA: 2.0, minSemesters: 7, trainingWeeks: 4 },
+      tracks: null,
+      courses: mergeCourses(SHARED_CORE, CSEC_SPEC),
+      studyPlan: CS_STUDY
+    }
+  };
+
+  let currentProgram = null;
+  let currentTrack = 'dea';
+  let treeView = 'full';
+  let hideVirtual = false;
+  let treeZoom = 1;
+  let progress = loadProgress();
+  let mermaidRenderId = 0;
+
+  function loadProgress() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    } catch { return {}; }
+  }
+  function saveProgress() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+  }
+  function getStatus(programId, code) {
+    return (progress[programId] && progress[programId][code]) || 'not_started';
+  }
+  function cycleStatus(programId, code) {
+    const order = ['not_started', 'in_progress', 'completed'];
+    const cur = getStatus(programId, code);
+    const next = order[(order.indexOf(cur) + 1) % 3];
+    if (!progress[programId]) progress[programId] = {};
+    if (next === 'not_started') delete progress[programId][code];
+    else progress[programId][code] = next;
+    saveProgress();
+    refreshUI();
+  }
+
+  function nodeId(code) {
+    return code.replace(/\s+/g, '').replace(/[^a-zA-Z0-9]/g, '');
+  }
+
+  function coursesForProgram(prog, trackId) {
+    return prog.courses.filter(co => {
+      if (VIRTUAL_CODES.includes(co.code)) return true;
+      if (co.trackOnly && co.trackOnly !== trackId && prog.id === 'cs') {
+        if (co.elective) return false;
+      }
+      return true;
+    });
+  }
+
+  function buildMermaidDefinition(prog, trackId, statuses) {
+    const courses = coursesForProgram(prog, trackId);
+    const codeSet = new Set(courses.map(x => x.code));
+    const lines = ['flowchart TD'];
+    const catFilter = {
+      full: () => true,
+      core: co => ['basic_computing', 'specialization', 'project'].includes(co.category) || co.code.startsWith('CSCI') || co.code.startsWith('AIS') || co.code.startsWith('CSEC') || co.code.startsWith('BMD'),
+      math: co => co.category === 'math' || co.code.startsWith('MATH') || co.code === 'PHYS 101' || co.code === 'ECEN 111',
+      computing: co => co.category === 'basic_computing' || ['CSCI 101','CSCI 102','CSCI 103','CSCI 204','CSCI 211','CSCI 212','CSCI 221','CSCI 231','CSCI 313','CSCI 321','CSCI 341','AIS 201'].includes(co.code),
+      spec: co => co.category === 'specialization' || co.category === 'project' || co.category === 'training'
+    };
+    const filterFn = catFilter[treeView] || catFilter.full;
+
+    courses.filter(filterFn).forEach(co => {
+      if (hideVirtual && VIRTUAL_CODES.includes(co.code)) return;
+      const id = nodeId(co.code);
+      const label = co.code.replace(/"/g, "'");
+      const st = statuses[co.code] || 'not_started';
+      const cls = st === 'completed' ? 'done' : st === 'in_progress' ? 'active' : 'pending';
+      lines.push(`    ${id}["${label}"]:::${cls}`);
+      co.prereqs.forEach(pr => {
+        if (!codeSet.has(pr)) return;
+        if (hideVirtual && VIRTUAL_CODES.includes(pr)) return;
+        if (!filterFn(courses.find(x => x.code === pr) || { category: '' })) return;
+        lines.push(`    ${nodeId(pr)} --> ${id}`);
+      });
+    });
+
+    lines.push('    classDef done fill:#064e3b,stroke:#34d399,color:#ecfdf5');
+    lines.push('    classDef active fill:#164e63,stroke:#22d3ee,color:#ecfeff');
+    lines.push('    classDef pending fill:#1e293b,stroke:#475569,color:#cbd5e1');
+    return lines.join('\n');
+  }
+
+  async function renderMermaid() {
+    if (!currentProgram) return;
+    const prog = PROGRAMS[currentProgram];
+    const statuses = progress[currentProgram] || {};
+    const def = buildMermaidDefinition(prog, currentTrack, statuses);
+    const host = document.getElementById('mermaidHost');
+    const renderId = ++mermaidRenderId;
+    host.removeAttribute('data-processed');
+    host.innerHTML = def;
+    host.className = 'mermaid';
+    try {
+      await mermaid.run({ nodes: [host] });
+    } catch (e) {
+      host.innerHTML = '<p style="color:#f87171">Diagram render error. Try Core chain view.</p>';
+      console.error(e);
+      return;
+    }
+    if (renderId !== mermaidRenderId) return;
+    host.style.transform = `scale(${treeZoom})`;
+    host.style.transformOrigin = 'top center';
+    attachMermaidClicks(prog);
+  }
+
+  function attachMermaidClicks(prog) {
+    const host = document.getElementById('mermaidHost');
+    const nodes = host.querySelectorAll('.node');
+    nodes.forEach(node => {
+      const text = node.textContent.trim();
+      const match = prog.courses.find(co => co.code === text || nodeId(co.code) === text);
+      if (!match || VIRTUAL_CODES.includes(match.code)) return;
+      node.style.cursor = 'pointer';
+      node.onclick = () => {
+        cycleStatus(currentProgram, match.code);
+        checkPrereqWarning(match);
+      };
+    });
+  }
+
+  function checkPrereqWarning(course) {
+    const alert = document.getElementById('prereqAlert');
+    const st = getStatus(currentProgram, course.code);
+    if (st === 'not_started') { alert.classList.remove('show'); return; }
+    const missing = course.prereqs.filter(pr => {
+      if (VIRTUAL_CODES.includes(pr)) return false;
+      return getStatus(currentProgram, pr) !== 'completed';
+    });
+    if (missing.length) {
+      alert.textContent = `Warning: ${course.code} marked ${st} but prerequisites not completed: ${missing.join(', ')}`;
+      alert.classList.add('show');
+    } else alert.classList.remove('show');
+  }
+
+  function computeProgress(prog, trackId) {
+    const courses = coursesForProgram(prog, trackId);
+    const statuses = progress[prog.id] || {};
+    let gpaDone = 0, totalDone = 0;
+    const byCat = {};
+    courses.forEach(co => {
+      if (VIRTUAL_CODES.includes(co.code)) return;
+      const st = statuses[co.code];
+      if (st !== 'completed') return;
+      if (co.countsGpa !== false) gpaDone += co.credits;
+      totalDone += co.credits;
+      byCat[co.category] = (byCat[co.category] || 0) + co.credits;
+    });
+    return {
+      gpaDone,
+      gpaTotal: prog.graduation.gpaCredits,
+      totalDone,
+      totalRequired: prog.graduation.total,
+      byCat,
+      percentGpa: Math.min(100, (gpaDone / prog.graduation.gpaCredits) * 100),
+      percentTotal: Math.min(100, (totalDone / prog.graduation.total) * 100)
+    };
+  }
+
+  function renderMajorGrid() {
+    const grid = document.getElementById('majorGrid');
+    grid.innerHTML = Object.values(PROGRAMS).map(p => `
+      <div class="major-card" data-id="${p.id}">
+        <div class="code">${p.id.toUpperCase()}</div>
+        <h3>${p.nameEn}</h3>
+        <p style="font-size:0.8rem;color:var(--muted);margin-top:8px;">138 credits · 132 GPA</p>
+      </div>
+    `).join('');
+    grid.querySelectorAll('.major-card').forEach(card => {
+      card.addEventListener('click', () => selectProgram(card.dataset.id));
+    });
+  }
+
+  function resetProgress() {
+    if (!confirm('Are you sure you want to reset all your completed courses? This cannot be undone.')) {
+      return;
+    }
+    progress = {};
+    saveProgress();
+    document.getElementById('prereqAlert').classList.remove('show');
+    if (currentProgram) {
+      refreshUI();
+    }
+  }
+
+  window.resetProgress = resetProgress;
+
+  function selectProgram(id) {
+    currentProgram = id;
+    document.querySelectorAll('.major-card').forEach(c => c.classList.toggle('active', c.dataset.id === id));
+    document.getElementById('dashboard').classList.remove('hidden');
+    const prog = PROGRAMS[id];
+    document.getElementById('trackSection').classList.toggle('hidden', !prog.tracks);
+    if (prog.tracks) renderTracks(prog);
+    refreshUI();
+    document.getElementById('dashboard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function renderTracks(prog) {
+    const pills = document.getElementById('trackPills');
+    pills.innerHTML = prog.tracks.map(t => `
+      <button type="button" class="pill ${t.id === currentTrack ? 'active' : ''}" data-track="${t.id}">
+        ${t.nameEn}
+      </button>
+    `).join('');
+    pills.querySelectorAll('.pill').forEach(p => {
+      p.addEventListener('click', () => {
+        currentTrack = p.dataset.track;
+        pills.querySelectorAll('.pill').forEach(x => x.classList.toggle('active', x.dataset.track === currentTrack));
+        refreshUI();
+      });
+    });
+  }
+
+  function refreshUI() {
+    if (!currentProgram) return;
+    const prog = PROGRAMS[currentProgram];
+    const p = computeProgress(prog, currentTrack);
+    const statuses = progress[currentProgram] || {};
+
+    document.getElementById('programTitle').textContent = prog.nameEn;
+    document.getElementById('programMission').textContent = prog.mission;
+
+    document.getElementById('statsRow').innerHTML = `
+      <div class="stat-box"><div class="val">${Math.round(p.percentGpa)}%</div><div class="lbl">GPA Credits</div></div>
+      <div class="stat-box"><div class="val">${p.gpaDone}</div><div class="lbl">of 132 cr</div></div>
+      <div class="stat-box"><div class="val">${Math.round(p.percentTotal)}%</div><div class="lbl">Total Degree</div></div>
+      <div class="stat-box"><div class="val">${prog.courses.filter(c => !VIRTUAL_CODES.includes(c.code) && statuses[c.code]==='completed').length}</div><div class="lbl">Courses Done</div></div>
+    `;
+    document.getElementById('gpaProgress').style.width = p.percentGpa + '%';
+    document.getElementById('totalProgress').style.width = p.percentTotal + '%';
+    document.getElementById('progressLabel').textContent = `GPA credits: ${p.gpaDone} / ${p.gpaTotal}`;
+    document.getElementById('totalLabel').textContent = `Total degree: ${p.totalDone} / ${p.totalRequired} (incl. 6 training)`;
+
+    document.getElementById('breakdownBody').innerHTML = prog.creditBreakdown.map(b => `
+      <tr><td>${b.area}</td><td>${b.credits}</td><td>${b.pct}%</td></tr>
+    `).join('');
+
+    document.getElementById('gradList').innerHTML = `
+      <li><strong>${prog.graduation.total}</strong> total credit hours</li>
+      <li><strong>${prog.graduation.gpaCredits}</strong> count toward GPA (+ 6 training pass/fail)</li>
+      <li>Minimum <strong>CGPA ${prog.graduation.minCGPA}</strong></li>
+      <li>Minimum <strong>${prog.graduation.minSemesters}</strong> regular semesters</li>
+      <li>Senior project (2 semesters) + 2 trainings (≥${prog.graduation.trainingWeeks} weeks each)</li>
+    `;
+
+    renderCatalog(prog, statuses);
+    renderStudyPlan(prog, statuses);
+    renderMermaid();
+  }
+
+  function renderCatalog(prog, statuses) {
+    const cat = document.getElementById('filterCategory').value;
+    const stFilter = document.getElementById('filterStatus').value;
+    const tbody = document.getElementById('catalogBody');
+    const rows = coursesForProgram(prog, currentTrack)
+      .filter(co => !VIRTUAL_CODES.includes(co.code))
+      .filter(co => cat === 'all' || co.category === cat)
+      .filter(co => {
+        const st = statuses[co.code] || 'not_started';
+        return stFilter === 'all' || st === stFilter;
+      })
+      .sort((a, b) => a.code.localeCompare(b.code));
+
+    tbody.innerHTML = rows.map(co => {
+      const st = statuses[co.code] || 'not_started';
+      const prereqWarn = co.prereqs.some(pr => !VIRTUAL_CODES.includes(pr) && statuses[pr] !== 'completed');
+      return `<tr class="${st === 'completed' ? 'row-completed' : ''}" data-code="${co.code}">
+        <td><strong>${co.code}</strong></td>
+        <td>${co.titleEn}${co.trackOnly ? ' <span class="category-badge">track</span>' : ''}${co.elective ? ' <span class="category-badge">elective</span>' : ''}</td>
+        <td>${co.credits}</td>
+        <td><span class="category-badge">${co.category.replace('_',' ')}</span></td>
+        <td>${co.prereqs.filter(p => !VIRTUAL_CODES.includes(p)).join(', ') || '—'}${prereqWarn && st !== 'not_started' ? '<br><span class="prereq-warn">Prereqs incomplete</span>' : ''}</td>
+        <td>
+          <div class="status-btns">
+            <button type="button" class="status-btn ${st==='completed'?'s-done':st==='in_progress'?'s-progress':''}" data-cycle="${co.code}" title="Click to cycle status">${st==='completed'?'✓':st==='in_progress'?'◐':'○'}</button>
+          </div>
+        </td>
+      </tr>`;
+    }).join('');
+
+    tbody.querySelectorAll('[data-cycle]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        cycleStatus(currentProgram, btn.dataset.cycle);
+        checkPrereqWarning(prog.courses.find(c => c.code === btn.dataset.cycle));
+      });
+    });
+  }
+
+  function renderStudyPlan(prog, statuses) {
+    const host = document.getElementById('studyPlanHost');
+    host.innerHTML = prog.studyPlan.map(sem => {
+      const tags = sem.courses.map(code => {
+        const st = statuses[code] || 'not_started';
+        const cls = st === 'completed' ? 'done' : '';
+        return `<span class="sem-tag ${cls}" data-code="${code}">${code}</span>`;
+      }).join('');
+      return `<div class="semester-block"><h4>${sem.label}</h4><div class="sem-tags">${tags}</div>
+        <button type="button" class="btn btn-ghost" style="margin-top:8px;font-size:0.75rem;" data-sem-complete="${sem.label}">Mark semester completed</button></div>`;
+    }).join('');
+
+    host.querySelectorAll('.sem-tag').forEach(tag => {
+      if (!prog.courses.find(c => c.code === tag.dataset.code)) return;
+      tag.addEventListener('click', () => cycleStatus(currentProgram, tag.dataset.code));
+    });
+    host.querySelectorAll('[data-sem-complete]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const sem = prog.studyPlan.find(s => s.label === btn.dataset.semComplete);
+        if (!sem) return;
+        if (!progress[currentProgram]) progress[currentProgram] = {};
+        sem.courses.forEach(code => {
+          if (prog.courses.find(c => c.code === code)) progress[currentProgram][code] = 'completed';
+        });
+        saveProgress();
+        refreshUI();
+      });
+    });
+  }
+
+  mermaid.initialize({
+    startOnLoad: false,
+    theme: 'dark',
+    securityLevel: 'loose',
+    flowchart: { curve: 'basis', padding: 16 },
+    themeVariables: {
+      primaryColor: '#1e293b',
+      primaryTextColor: '#f8fafc',
+      primaryBorderColor: '#22d3ee',
+      lineColor: '#22d3ee',
+      secondaryColor: '#334155',
+      tertiaryColor: '#0f172a'
+    }
+  });
+
+  document.querySelectorAll('[data-view]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-view]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      treeView = btn.dataset.view;
+      renderMermaid();
+    });
+  });
+  document.getElementById('hideVirtual').addEventListener('change', e => {
+    hideVirtual = e.target.checked;
+    renderMermaid();
+  });
+  document.getElementById('zoomIn').addEventListener('click', () => { treeZoom = Math.min(2, treeZoom + 0.1); renderMermaid(); });
+  document.getElementById('zoomOut').addEventListener('click', () => { treeZoom = Math.max(0.5, treeZoom - 0.1); renderMermaid(); });
+
+  document.getElementById('filterCategory').addEventListener('change', () => refreshUI());
+  document.getElementById('filterStatus').addEventListener('change', () => refreshUI());
+
+  document.getElementById('exportBtn').addEventListener('click', () => {
+    const blob = new Blob([JSON.stringify(progress, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'nu_itcs_progress.json';
+    a.click();
+  });
+  document.getElementById('importBtn').addEventListener('click', () => document.getElementById('importFile').click());
+  document.getElementById('importFile').addEventListener('change', e => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        progress = JSON.parse(reader.result);
+        saveProgress();
+        refreshUI();
+        alert('Progress imported.');
+      } catch { alert('Invalid JSON file.'); }
+    };
+    reader.readAsText(file);
+  });
+  renderMajorGrid();
+})();
+</script>
+</body>
+</html>
