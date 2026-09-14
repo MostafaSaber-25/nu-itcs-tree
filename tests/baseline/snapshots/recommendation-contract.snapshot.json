@@ -1,0 +1,12 @@
+{
+  "generatedAt": "deterministic",
+  "rules": [
+    "earliest unfinished official period",
+    "ready/locked prerequisite state",
+    "exclude completed",
+    "no future-period leakage",
+    "preserve Summer",
+    "preserve training/project rules",
+    "preserve placeholder identity"
+  ]
+}

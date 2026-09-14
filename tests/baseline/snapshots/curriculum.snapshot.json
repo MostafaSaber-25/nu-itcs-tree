@@ -1,0 +1,2699 @@
+{
+  "generatedAt": "deterministic",
+  "slots": [
+    {
+      "program": "ai",
+      "slotId": "AI-S1-CSCI-101-01",
+      "code": "CSCI 101",
+      "title": "Introduction to Computational Thinking and Problem Solving",
+      "credits": 3,
+      "semester": 1,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "High School Certificate"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S1-CSCI-102-01",
+      "code": "CSCI 102",
+      "title": "Fundamentals of Computing I",
+      "credits": 4,
+      "semester": 1,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "High School Certificate"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S1-ENGL-002-01",
+      "code": "ENGL 002",
+      "title": "English I",
+      "credits": 0,
+      "semester": 1,
+      "termType": "regular",
+      "year": null,
+      "category": "english",
+      "prereqs": [
+        "Placement Test"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S1-MATH-121-01",
+      "code": "MATH 121",
+      "title": "Calculus I and Analytical Geometry",
+      "credits": 3,
+      "semester": 1,
+      "termType": "regular",
+      "year": null,
+      "category": "math",
+      "prereqs": [
+        "High School (Math)"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S1-PHYS-101-01",
+      "code": "PHYS 101",
+      "title": "Physics I",
+      "credits": 4,
+      "semester": 1,
+      "termType": "regular",
+      "year": null,
+      "category": "science",
+      "prereqs": [
+        "High School Certificate"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S2-CSCI-103-01",
+      "code": "CSCI 103",
+      "title": "Fundamentals of Computing II",
+      "credits": 4,
+      "semester": 2,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 102"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S2-ECEN-111-01",
+      "code": "ECEN 111",
+      "title": "Electronics and Circuits",
+      "credits": 3,
+      "semester": 2,
+      "termType": "regular",
+      "year": null,
+      "category": "science",
+      "prereqs": [
+        "PHYS 101"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S2-ENGL-003-01",
+      "code": "ENGL 003",
+      "title": "English II",
+      "credits": 0,
+      "semester": 2,
+      "termType": "regular",
+      "year": null,
+      "category": "english",
+      "prereqs": [
+        "ENGL 002"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S2-HUMA-1XX-01",
+      "code": "HUMA 1xx",
+      "title": "HUMA-Elective 1",
+      "credits": 3,
+      "semester": 2,
+      "termType": "regular",
+      "year": null,
+      "category": "humanities",
+      "prereqs": [
+        "High School Certificate"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S2-MATH-113-01",
+      "code": "MATH 113",
+      "title": "Discrete Mathematics",
+      "credits": 3,
+      "semester": 2,
+      "termType": "regular",
+      "year": null,
+      "category": "math",
+      "prereqs": [
+        "MATH 120 / High School Math"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S2-MATH-122-01",
+      "code": "MATH 122",
+      "title": "Calculus II",
+      "credits": 3,
+      "semester": 2,
+      "termType": "regular",
+      "year": null,
+      "category": "math",
+      "prereqs": [
+        "MATH 121"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S3-CSCI-204-01",
+      "code": "CSCI 204",
+      "title": "Data Structures and Algorithms",
+      "credits": 3,
+      "semester": 3,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 103"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S3-CSCI-211-01",
+      "code": "CSCI 211",
+      "title": "Logic Design",
+      "credits": 3,
+      "semester": 3,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "ECEN 111"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S3-CSCI-221-01",
+      "code": "CSCI 221",
+      "title": "Database Systems",
+      "credits": 3,
+      "semester": 3,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 103"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S3-ENGL-201-01",
+      "code": "ENGL 201",
+      "title": "Scientific Writing",
+      "credits": 3,
+      "semester": 3,
+      "termType": "regular",
+      "year": null,
+      "category": "english",
+      "prereqs": [
+        "ENGL 003"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S3-MATH-202-01",
+      "code": "MATH 202",
+      "title": "Probability and Statistics",
+      "credits": 3,
+      "semester": 3,
+      "termType": "regular",
+      "year": null,
+      "category": "math",
+      "prereqs": [
+        "MATH 121"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S3-MATH-223-01",
+      "code": "MATH 223",
+      "title": "Differential Equations",
+      "credits": 3,
+      "semester": 3,
+      "termType": "regular",
+      "year": null,
+      "category": "math",
+      "prereqs": [
+        "MATH 122"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S4-AIS-201-01",
+      "code": "AIS 201",
+      "title": "Introduction to Artificial Intelligence",
+      "credits": 3,
+      "semester": 4,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "CSCI 204",
+        "MATH 202"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S4-CSCI-212-01",
+      "code": "CSCI 212",
+      "title": "Computer Architecture",
+      "credits": 3,
+      "semester": 4,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 211"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S4-CSCI-231-01",
+      "code": "CSCI 231",
+      "title": "Analysis and Design of Algorithms",
+      "credits": 3,
+      "semester": 4,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 204"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S4-CSCI-331-01",
+      "code": "CSCI 331",
+      "title": "Introduction to Data Science",
+      "credits": 3,
+      "semester": 4,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "MATH 202"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S4-ENGL-202-01",
+      "code": "ENGL 202",
+      "title": "Communication and Presentation Skills",
+      "credits": 3,
+      "semester": 4,
+      "termType": "regular",
+      "year": null,
+      "category": "english",
+      "prereqs": [
+        "ENGL 201"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S4-MATH-321-01",
+      "code": "MATH 321",
+      "title": "Linear Algebra",
+      "credits": 3,
+      "semester": 4,
+      "termType": "regular",
+      "year": null,
+      "category": "math",
+      "prereqs": [
+        "MATH 121"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S5-AIS-301-01",
+      "code": "AIS 301",
+      "title": "Machine Learning",
+      "credits": 3,
+      "semester": 5,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "AIS 201",
+        "CSCI 331"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S5-CSCI-313-01",
+      "code": "CSCI 313",
+      "title": "Operating Systems",
+      "credits": 3,
+      "semester": 5,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 212"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S5-CSCI-321-01",
+      "code": "CSCI 321",
+      "title": "Software Engineering",
+      "credits": 3,
+      "semester": 5,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 103"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S5-CSCI-341-01",
+      "code": "CSCI 341",
+      "title": "Introduction to Computer Networks",
+      "credits": 3,
+      "semester": 5,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 231"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S5-CSCI-351-01",
+      "code": "CSCI 351",
+      "title": "Digital Image Processing",
+      "credits": 3,
+      "semester": 5,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "CSCI 204"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S5-HUMA-2XX-01",
+      "code": "HUMA 2xx",
+      "title": "HUMA-Elective 1",
+      "credits": 3,
+      "semester": 5,
+      "termType": "regular",
+      "year": null,
+      "category": "humanities",
+      "prereqs": [
+        "High School Certificate"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S6-AIS-302-01",
+      "code": "AIS 302",
+      "title": "Deep Learning",
+      "credits": 3,
+      "semester": 6,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "AIS 301"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S6-AIS-323-01",
+      "code": "AIS 323",
+      "title": "Optimization Techniques",
+      "credits": 3,
+      "semester": 6,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "AIS 301",
+        "MATH 321"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S6-AIS-3XX-01",
+      "code": "AIS 3xx",
+      "title": "AI Elective 1",
+      "credits": 3,
+      "semester": 6,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "Track specific"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S6-AIS-460-01",
+      "code": "AIS 460",
+      "title": "Introduction to Autonomous Robotics",
+      "credits": 3,
+      "semester": 6,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "AIS 201"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S6-CSCI-333-01",
+      "code": "CSCI 333",
+      "title": "Big Data Analytics",
+      "credits": 3,
+      "semester": 6,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "CSCI 221",
+        "CSCI 331"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S6-SSCI-301-01",
+      "code": "SSCI 301",
+      "title": "Project Management",
+      "credits": 3,
+      "semester": 6,
+      "termType": "regular",
+      "year": null,
+      "category": "humanities",
+      "prereqs": [
+        "Junior Level"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S7-AIS-401-01",
+      "code": "AIS 401",
+      "title": "Deep Learning for Computer Vision",
+      "credits": 3,
+      "semester": 7,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "AIS 301",
+        "CSCI 351"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S7-AIS-401-02",
+      "code": "AIS 401",
+      "title": "Deep Learning for NLP and LLMs",
+      "credits": 3,
+      "semester": 7,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "AIS 302"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S7-AIS-493-01",
+      "code": "AIS 493",
+      "title": "Senior Project I",
+      "credits": 3,
+      "semester": 7,
+      "termType": "regular",
+      "year": null,
+      "category": "project",
+      "prereqs": [
+        "Completing 87 Credit Hours"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S7-AIS-CSCI-4XX-01",
+      "code": "AIS/CSCI 4xx",
+      "title": "AI Elective 2",
+      "credits": 3,
+      "semester": 7,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": []
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S7-SSCI-1XX-01",
+      "code": "SSCI 1xx",
+      "title": "SSCI elective 1",
+      "credits": 3,
+      "semester": 7,
+      "termType": "regular",
+      "year": null,
+      "category": "humanities",
+      "prereqs": []
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S8-AIS-494-01",
+      "code": "AIS 494",
+      "title": "Senior Project II",
+      "credits": 3,
+      "semester": 8,
+      "termType": "regular",
+      "year": null,
+      "category": "project",
+      "prereqs": [
+        "AIS 493"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S8-AIS-CSCI-4XX-01",
+      "code": "AIS/CSCI 4xx",
+      "title": "AI Elective 3",
+      "credits": 3,
+      "semester": 8,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": []
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S8-AIS-CSCI-4XX-02",
+      "code": "AIS/CSCI 4xx",
+      "title": "AI Elective 4",
+      "credits": 3,
+      "semester": 8,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": []
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S8-CSCI-471-01",
+      "code": "CSCI 471",
+      "title": "Theory of Computation and Compile Design",
+      "credits": 3,
+      "semester": 8,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "MATH 113",
+        "CSCI 231"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-S8-SSCI-2XX-01",
+      "code": "SSCI 2xx",
+      "title": "SSCI elective 2",
+      "credits": 3,
+      "semester": 8,
+      "termType": "regular",
+      "year": null,
+      "category": "humanities",
+      "prereqs": []
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-SUMMER-Y2-AIS-291-01",
+      "code": "AIS 291",
+      "title": "Industrial/Research Training I",
+      "credits": 3,
+      "semester": null,
+      "termType": "summer",
+      "year": 2,
+      "category": "training",
+      "prereqs": [
+        "SOPH"
+      ]
+    },
+    {
+      "program": "ai",
+      "slotId": "AI-SUMMER-Y3-AIS-391-01",
+      "code": "AIS 391",
+      "title": "Industrial/Research Training II",
+      "credits": 3,
+      "semester": null,
+      "termType": "summer",
+      "year": 3,
+      "category": "training",
+      "prereqs": [
+        "JUN"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S1-BMD-100-01",
+      "code": "BMD 100",
+      "title": "Principles of Biology",
+      "credits": 0,
+      "semester": null,
+      "termType": "regular",
+      "year": null,
+      "category": "science",
+      "prereqs": [
+        "Math Section"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S1-CSCI-101-01",
+      "code": "CSCI 101",
+      "title": "Introduction to Computational Thinking and Problem Solving",
+      "credits": 3,
+      "semester": 1,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": []
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S1-CSCI-102-01",
+      "code": "CSCI 102",
+      "title": "Fundamentals of Computing I",
+      "credits": 4,
+      "semester": 1,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": []
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S1-ENGL-002-01",
+      "code": "ENGL-101",
+      "title": "English I",
+      "credits": 0,
+      "semester": 1,
+      "termType": "regular",
+      "year": null,
+      "category": "english",
+      "prereqs": [
+        "B2/C1 level in English placement test"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S1-MATH-113-01",
+      "code": "MATH 113",
+      "title": "Discrete Mathematics",
+      "credits": 3,
+      "semester": 2,
+      "termType": "regular",
+      "year": null,
+      "category": "math",
+      "prereqs": [
+        "MATH 120 or High School certificate (Math) or equivalent"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S1-MATH-120-01",
+      "code": "MATH 120",
+      "title": "Pre-calculus Mathematics",
+      "credits": 0,
+      "semester": 1,
+      "termType": "regular",
+      "year": null,
+      "category": "math",
+      "prereqs": [
+        "Science Section"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S1-MATH-121-01",
+      "code": "MATH 121",
+      "title": "Calculus I and Analytical Geometry",
+      "credits": 3,
+      "semester": 2,
+      "termType": "regular",
+      "year": null,
+      "category": "math",
+      "prereqs": [
+        "High School certificate (Math) or equivalent"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S2-BMD-101-01",
+      "code": "BMD 101",
+      "title": "Biology and Genetics",
+      "credits": 3,
+      "semester": 1,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "BMD 100",
+        "Science Section"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S2-BMD-102-01",
+      "code": "BMD 102",
+      "title": "Biochemistry and Molecular Biology",
+      "credits": 3,
+      "semester": 2,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "BMD 101"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S2-CSCI-103-01",
+      "code": "CSCI 103",
+      "title": "Fundamentals of Computing II",
+      "credits": 4,
+      "semester": 2,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 102"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S2-ENGL-003-01",
+      "code": "ENGL-102",
+      "title": "English II",
+      "credits": 0,
+      "semester": 2,
+      "termType": "regular",
+      "year": null,
+      "category": "english",
+      "prereqs": [
+        "ENGL-101"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S2-HUMA-1XX-01",
+      "code": "HUMA 1xx",
+      "title": "HUMA 1xx",
+      "credits": 3,
+      "semester": 2,
+      "termType": "regular",
+      "year": null,
+      "category": "humanities",
+      "prereqs": [
+        "High School certificate or equivalent"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S2-PHYS-101-01",
+      "code": "PHYS 101",
+      "title": "Physics I",
+      "credits": 4,
+      "semester": 1,
+      "termType": "regular",
+      "year": null,
+      "category": "science",
+      "prereqs": []
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S3-BMD-203-01",
+      "code": "BMD 203",
+      "title": "Human Physiology and Anatomy",
+      "credits": 3,
+      "semester": 3,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "BMD 101",
+        "BMD 102"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S3-BMD-241-01",
+      "code": "BMD 241",
+      "title": "Logic Design and Computer Architecture",
+      "credits": 3,
+      "semester": 3,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "PHYS 101"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S3-CSCI-204-01",
+      "code": "CSCI 204",
+      "title": "Data Structures and Algorithms",
+      "credits": 3,
+      "semester": 3,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 103"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S3-ENGL-201-01",
+      "code": "ENGL 201",
+      "title": "Scientific Writing",
+      "credits": 3,
+      "semester": 3,
+      "termType": "regular",
+      "year": null,
+      "category": "english",
+      "prereqs": [
+        "ENGL 003"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S3-MATH-122-01",
+      "code": "MATH 122",
+      "title": "Calculus II",
+      "credits": 3,
+      "semester": 3,
+      "termType": "regular",
+      "year": null,
+      "category": "math",
+      "prereqs": [
+        "MATH 121"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S3-MATH-321-01",
+      "code": "MATH 321",
+      "title": "Linear Algebra",
+      "credits": 3,
+      "semester": 3,
+      "termType": "regular",
+      "year": null,
+      "category": "math",
+      "prereqs": [
+        "MATH 121"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S4-BMD-211-01",
+      "code": "BMD 211",
+      "title": "Bioinformatics I",
+      "credits": 3,
+      "semester": 4,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "CSCI 231"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S4-CSCI-221-01",
+      "code": "CSCI 221",
+      "title": "Database Systems",
+      "credits": 3,
+      "semester": 4,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 103"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S4-CSCI-231-01",
+      "code": "CSCI 231",
+      "title": "Analysis and Design of Algorithms",
+      "credits": 3,
+      "semester": 4,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 204"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S4-HUMA-2XX-01",
+      "code": "HUMA 2xx",
+      "title": "Humanities Elective 2",
+      "credits": 3,
+      "semester": 4,
+      "termType": "regular",
+      "year": null,
+      "category": "humanities",
+      "prereqs": [
+        "High School Certificate"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S4-MATH-202-01",
+      "code": "MATH 202",
+      "title": "Probability and Statistics",
+      "credits": 3,
+      "semester": 4,
+      "termType": "regular",
+      "year": null,
+      "category": "math",
+      "prereqs": [
+        "MATH 121"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S4-MATH-303-01",
+      "code": "MATH 303",
+      "title": "Numerical Methods and Differential Equations",
+      "credits": 3,
+      "semester": 4,
+      "termType": "regular",
+      "year": null,
+      "category": "math",
+      "prereqs": [
+        "MATH 321"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S5-BMD-321-01",
+      "code": "BMD 321",
+      "title": "Clinical Information Systems",
+      "credits": 3,
+      "semester": 5,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "CSCI 221",
+        "CSCI 341"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S5-CSCI-313-01",
+      "code": "CSCI 313",
+      "title": "Operating Systems",
+      "credits": 3,
+      "semester": 5,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "BMD 241"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S5-CSCI-321-01",
+      "code": "CSCI 321",
+      "title": "Software Engineering",
+      "credits": 3,
+      "semester": 5,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 103"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S5-CSCI-331-01",
+      "code": "CSCI 331",
+      "title": "Introduction to Data Science",
+      "credits": 3,
+      "semester": 5,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "MATH 202"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S5-CSCI-381-01",
+      "code": "CSCI 381",
+      "title": "Digital Signal Processing",
+      "credits": 3,
+      "semester": 5,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "MATH 303",
+        "MATH 122"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S5-ENGL-202-01",
+      "code": "ENGL 202",
+      "title": "Communication and Presentation Skills",
+      "credits": 3,
+      "semester": 5,
+      "termType": "regular",
+      "year": null,
+      "category": "english",
+      "prereqs": [
+        "ENGL 201"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S6-AIS-201-01",
+      "code": "AIS 201",
+      "title": "Introduction to Artificial Intelligence",
+      "credits": 3,
+      "semester": 6,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "CSCI 204",
+        "MATH 202"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S6-BMD-323-01",
+      "code": "BMD 323",
+      "title": "Biomedical Data Acquisition",
+      "credits": 3,
+      "semester": 6,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "BMD 203",
+        "CSCI 381"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S6-BMD-3XX-01",
+      "code": "BMD 3xx",
+      "title": "Technical Elective 1",
+      "credits": 3,
+      "semester": 6,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "Track specific"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S6-BMD-3XX-02",
+      "code": "BMD 3xx",
+      "title": "Technical Elective 2",
+      "credits": 3,
+      "semester": 6,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "Track specific"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S6-CSCI-351-01",
+      "code": "CSCI 351",
+      "title": "Digital Image Processing",
+      "credits": 3,
+      "semester": 6,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "CSCI 204"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S6-SSCI-1XX-01",
+      "code": "SSCI 1xx",
+      "title": "SSCI-elective 1",
+      "credits": 3,
+      "semester": 6,
+      "termType": "regular",
+      "year": null,
+      "category": "humanities",
+      "prereqs": [
+        "High School Certificate"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S7-AIS-305-01",
+      "code": "AIS 305",
+      "title": "Machine learning for biomedical applications",
+      "credits": 3,
+      "semester": 7,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "AIS 201"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S7-BMD-493-01",
+      "code": "BMD 493",
+      "title": "Senior Project I",
+      "credits": 3,
+      "semester": 7,
+      "termType": "regular",
+      "year": null,
+      "category": "project",
+      "prereqs": [
+        "Completing 87 Credit Hours"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S7-BMD-4XX-01",
+      "code": "BMD 4xx",
+      "title": "Technical Elective 3",
+      "credits": 3,
+      "semester": 7,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "Track specific"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S7-CSCI-341-01",
+      "code": "CSCI 341",
+      "title": "Introduction to Computer Networks",
+      "credits": 3,
+      "semester": 7,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 231"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S7-SSCI-301-01",
+      "code": "SSCI 301",
+      "title": "Project Management",
+      "credits": 3,
+      "semester": 7,
+      "termType": "regular",
+      "year": null,
+      "category": "humanities",
+      "prereqs": [
+        "Junior Level"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S8-BMD-431-01",
+      "code": "BMD 431",
+      "title": "Medical Imaging Informatics",
+      "credits": 3,
+      "semester": 8,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "CSCI 351"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S8-BMD-494-01",
+      "code": "BMD 494",
+      "title": "Senior Project II",
+      "credits": 3,
+      "semester": 8,
+      "termType": "regular",
+      "year": null,
+      "category": "project",
+      "prereqs": [
+        "BMD 493"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S8-BMD-4XX-01",
+      "code": "BMD 4xx",
+      "title": "Technical Elective 4",
+      "credits": 3,
+      "semester": 8,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "Track specific"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S8-CSCI-471-01",
+      "code": "CSCI 471",
+      "title": "Theory of Computation and Compiler Design",
+      "credits": 3,
+      "semester": 8,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "MATH 113",
+        "CSCI 231"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-S8-SSCI-2XX-01",
+      "code": "SSCI 2xx",
+      "title": "SSCI-elective 2",
+      "credits": 3,
+      "semester": 8,
+      "termType": "regular",
+      "year": null,
+      "category": "humanities",
+      "prereqs": [
+        "None"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-SUMMER-Y2-BMD-291-01",
+      "code": "BMD 291",
+      "title": "Industrial/Research Training I",
+      "credits": 3,
+      "semester": null,
+      "termType": "summer",
+      "year": 2,
+      "category": "training",
+      "prereqs": [
+        "SOPH"
+      ]
+    },
+    {
+      "program": "biomedical",
+      "slotId": "BIOMEDICAL-SUMMER-Y3-BMD-391-01",
+      "code": "BMD 391",
+      "title": "Industrial/Research Training II",
+      "credits": 3,
+      "semester": null,
+      "termType": "summer",
+      "year": 3,
+      "category": "training",
+      "prereqs": [
+        "JUN"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "CS-S3-AIS-201-01",
+      "code": "AIS 201",
+      "title": "Introduction to Artificial Intelligence",
+      "credits": 3,
+      "semester": 4,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 204",
+        "MATH 202"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "CS-S5-AIS-301-01",
+      "code": "AIS 301",
+      "title": "Machine Learning",
+      "credits": 3,
+      "semester": 6,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "AIS 201",
+        "CSCI 331"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "CS-S5-CSEC-211-01",
+      "code": "CSEC 211",
+      "title": "Introduction to Cybersecurity",
+      "credits": 3,
+      "semester": 6,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "CSCI 101",
+        "CSCI 204"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "CS-S6-CSCI-341-01",
+      "code": "CSCI 341",
+      "title": "Introduction to Computer Networks",
+      "credits": 3,
+      "semester": 5,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 231"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "CS-S6-CSCI-351-01",
+      "code": "CSCI 351",
+      "title": "Digital Image Processing",
+      "credits": 3,
+      "semester": 5,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "CSCI 204"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "CS-S7-CSCI-472-01",
+      "code": "CSCI 472",
+      "title": "Introduction to Parallel Computing",
+      "credits": 3,
+      "semester": 8,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "CSCI 313"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "CS-S7-CSCI-AIS-4XX-01",
+      "code": "CSCI/AIS 4xx",
+      "title": "Track Technical Elective 1",
+      "credits": 3,
+      "semester": 8,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "Track specific"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S1-CSCI-101-01",
+      "code": "CSCI 101",
+      "title": "Introduction to Computational Thinking and Problem Solving",
+      "credits": 3,
+      "semester": 1,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "High School Certificate"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S1-CSCI-102-01",
+      "code": "CSCI 102",
+      "title": "Fundamentals of Computing I",
+      "credits": 4,
+      "semester": 1,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "High School Certificate"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S1-ENGL-002-01",
+      "code": "ENGL 002",
+      "title": "English I",
+      "credits": 0,
+      "semester": 1,
+      "termType": "regular",
+      "year": null,
+      "category": "english",
+      "prereqs": [
+        "Placement Test"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S1-MATH-121-01",
+      "code": "MATH 121",
+      "title": "Calculus I and Analytical Geometry",
+      "credits": 3,
+      "semester": 1,
+      "termType": "regular",
+      "year": null,
+      "category": "math",
+      "prereqs": [
+        "High School (Math)"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S1-PHYS-101-01",
+      "code": "PHYS 101",
+      "title": "Physics I",
+      "credits": 4,
+      "semester": 1,
+      "termType": "regular",
+      "year": null,
+      "category": "science",
+      "prereqs": [
+        "High School Certificate"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S2-CSCI-103-01",
+      "code": "CSCI 103",
+      "title": "Fundamentals of Computing II",
+      "credits": 4,
+      "semester": 2,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 102"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S2-ECEN-111-01",
+      "code": "ECEN 111",
+      "title": "Electronics and Electrical Circuits",
+      "credits": 3,
+      "semester": 2,
+      "termType": "regular",
+      "year": null,
+      "category": "science",
+      "prereqs": [
+        "PHYS 101"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S2-ENGL-003-01",
+      "code": "ENGL 003",
+      "title": "English II",
+      "credits": 0,
+      "semester": 2,
+      "termType": "regular",
+      "year": null,
+      "category": "english",
+      "prereqs": [
+        "ENGL 002"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S2-HUMA-1XX-01",
+      "code": "HUMA 1xx",
+      "title": "HUMA - elective 1",
+      "credits": 3,
+      "semester": 2,
+      "termType": "regular",
+      "year": null,
+      "category": "humanities",
+      "prereqs": [
+        "None"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S2-MATH-113-01",
+      "code": "MATH 113",
+      "title": "Discrete Mathematics",
+      "credits": 3,
+      "semester": 2,
+      "termType": "regular",
+      "year": null,
+      "category": "math",
+      "prereqs": [
+        "MATH 120 / High School Math"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S2-MATH-122-01",
+      "code": "MATH 122",
+      "title": "Calculus II",
+      "credits": 3,
+      "semester": 2,
+      "termType": "regular",
+      "year": null,
+      "category": "math",
+      "prereqs": [
+        "MATH 121"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S3-CSCI-204-01",
+      "code": "CSCI 204",
+      "title": "Data Structures and Algorithms",
+      "credits": 3,
+      "semester": 3,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 103"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S3-CSCI-211-01",
+      "code": "CSCI 211",
+      "title": "Logic Design",
+      "credits": 3,
+      "semester": 3,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "ECEN 111"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S3-CSCI-221-01",
+      "code": "CSCI 221",
+      "title": "Database Systems",
+      "credits": 3,
+      "semester": 3,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 103"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S3-ENGL-201-01",
+      "code": "ENGL 201",
+      "title": "Scientific Writing",
+      "credits": 3,
+      "semester": 3,
+      "termType": "regular",
+      "year": null,
+      "category": "english",
+      "prereqs": [
+        "ENGL 003"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S3-MATH-202-01",
+      "code": "MATH 202",
+      "title": "Probability and Statistics",
+      "credits": 3,
+      "semester": 3,
+      "termType": "regular",
+      "year": null,
+      "category": "math",
+      "prereqs": [
+        "MATH 121"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S3-MATH-223-01",
+      "code": "MATH 223",
+      "title": "Differential Equations",
+      "credits": 3,
+      "semester": 3,
+      "termType": "regular",
+      "year": null,
+      "category": "math",
+      "prereqs": [
+        "MATH 122"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S4-AIS-201-01",
+      "code": "AIS 201",
+      "title": "Introduction to Artificial Intelligence",
+      "credits": 3,
+      "semester": 4,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "CSCI 204",
+        "MATH 202"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S4-CSCI-212-01",
+      "code": "CSCI 212",
+      "title": "Computer Architecture",
+      "credits": 3,
+      "semester": 4,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 211"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S4-CSCI-231-01",
+      "code": "CSCI 231",
+      "title": "Analysis and Design of Algorithms",
+      "credits": 3,
+      "semester": 4,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 204"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S4-CSEC-211-01",
+      "code": "CSEC 211",
+      "title": "Introduction to Cybersecurity",
+      "credits": 3,
+      "semester": 4,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "CSCI 101",
+        "CSCI 204"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S4-ENGL-202-01",
+      "code": "ENGL 202",
+      "title": "Communication and Presentation Skills",
+      "credits": 3,
+      "semester": 4,
+      "termType": "regular",
+      "year": null,
+      "category": "english",
+      "prereqs": [
+        "ENGL 201"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S4-MATH-321-01",
+      "code": "MATH 321",
+      "title": "Linear Algebra",
+      "credits": 3,
+      "semester": 4,
+      "termType": "regular",
+      "year": null,
+      "category": "math",
+      "prereqs": [
+        "MATH 121"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S5-CSCI-313-01",
+      "code": "CSCI 313",
+      "title": "Operating Systems",
+      "credits": 3,
+      "semester": 5,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 212"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S5-CSCI-321-01",
+      "code": "CSCI 321",
+      "title": "Software Engineering",
+      "credits": 3,
+      "semester": 5,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 103"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S5-CSCI-341-01",
+      "code": "CSCI 341",
+      "title": "Introduction to Computer Networks",
+      "credits": 3,
+      "semester": 5,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 231"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S5-CSCI-351-01",
+      "code": "CSCI 351",
+      "title": "Digital Image Processing",
+      "credits": 3,
+      "semester": 5,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "CSCI 204"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S5-CSEC-311-01",
+      "code": "CSEC 311",
+      "title": "Introduction to Cryptography",
+      "credits": 3,
+      "semester": 5,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "CSEC 211",
+        "CSCI 231"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S5-SSCI-1XX-01",
+      "code": "SSCI 1xx",
+      "title": "SSCI-Elective 1",
+      "credits": 3,
+      "semester": 5,
+      "termType": "regular",
+      "year": null,
+      "category": "humanities",
+      "prereqs": [
+        "High School Certificate"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S6-CSEC-312-01",
+      "code": "CSEC 312",
+      "title": "Blockchain Applications",
+      "credits": 3,
+      "semester": 6,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "CSEC 311"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S6-CSEC-321-01",
+      "code": "CSEC 321",
+      "title": "Operating Systems Security",
+      "credits": 3,
+      "semester": 6,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "CSEC 211",
+        "CSCI 313"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S6-CSEC-341-01",
+      "code": "CSEC 341",
+      "title": "Network Security Fundamentals",
+      "credits": 3,
+      "semester": 6,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "CSEC 211",
+        "CSCI 341"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S6-CSEC-3XX-4XX-01",
+      "code": "CSEC 3xx/4xx",
+      "title": "CSEC Elective 1",
+      "credits": 3,
+      "semester": 6,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "Track specific"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S6-CSEC-4XX-01",
+      "code": "CSEC 4xx",
+      "title": "CSEC Elective 2",
+      "credits": 3,
+      "semester": 6,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "Track specific"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S6-SSCI-301-01",
+      "code": "SSCI 301",
+      "title": "Project Management",
+      "credits": 3,
+      "semester": 6,
+      "termType": "regular",
+      "year": null,
+      "category": "humanities",
+      "prereqs": [
+        "Junior Level"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S7-CSEC-431-01",
+      "code": "CSEC 431",
+      "title": "Fundamentals of Digital Forensics",
+      "credits": 3,
+      "semester": 7,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "CSCI 351",
+        "CSEC 321"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S7-CSEC-493-01",
+      "code": "CSEC 493",
+      "title": "Senior Project I",
+      "credits": 3,
+      "semester": 7,
+      "termType": "regular",
+      "year": null,
+      "category": "project",
+      "prereqs": [
+        "87 Credit Hours"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S7-CSEC-4XX-01",
+      "code": "CSEC 4xx",
+      "title": "CSEC Elective 3",
+      "credits": 3,
+      "semester": 7,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "Track specific"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S7-HUMA-1XX-2XX-01",
+      "code": "HUMA 1xx/2xx",
+      "title": "HUMA elective 2",
+      "credits": 3,
+      "semester": 7,
+      "termType": "regular",
+      "year": null,
+      "category": "humanities",
+      "prereqs": [
+        "None"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S7-SSCI-2XX-01",
+      "code": "SSCI 2xx",
+      "title": "SSCI-elective 2",
+      "credits": 3,
+      "semester": 7,
+      "termType": "regular",
+      "year": null,
+      "category": "humanities",
+      "prereqs": [
+        "None"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S8-CSEC-432-01",
+      "code": "CSEC 432",
+      "title": "Basics of Ethical Hacking",
+      "credits": 3,
+      "semester": 8,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "AIS 201",
+        "CSEC 341"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S8-CSEC-433-01",
+      "code": "CSEC 433",
+      "title": "Incident Response Handling and Malware Analysis",
+      "credits": 3,
+      "semester": 8,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "AIS 201",
+        "CSEC 341"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S8-CSEC-494-01",
+      "code": "CSEC 494",
+      "title": "Senior Project II",
+      "credits": 3,
+      "semester": 8,
+      "termType": "regular",
+      "year": null,
+      "category": "project",
+      "prereqs": [
+        "CSEC 493"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S8-CSEC-4XX-01",
+      "code": "CSEC 4xx",
+      "title": "CSEC Elective 4",
+      "credits": 3,
+      "semester": 8,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "Track specific"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-S8-CSEC-4XX-02",
+      "code": "CSEC 4xx",
+      "title": "CSEC Elective 5",
+      "credits": 3,
+      "semester": 8,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "Track specific"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-SUMMER-Y2-CSEC-291-01",
+      "code": "CSEC 291",
+      "title": "Industrial/Research Training I",
+      "credits": 3,
+      "semester": null,
+      "termType": "summer",
+      "year": 2,
+      "category": "training",
+      "prereqs": [
+        "SOPH"
+      ]
+    },
+    {
+      "program": "cybersecurity",
+      "slotId": "CYBERSECURITY-SUMMER-Y3-CSEC-391-01",
+      "code": "CSEC 391",
+      "title": "Industrial/Research Training II",
+      "credits": 3,
+      "semester": null,
+      "termType": "summer",
+      "year": 3,
+      "category": "training",
+      "prereqs": [
+        "JUN"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S1-CSCI-101-01",
+      "code": "CSCI 101",
+      "title": "Introduction to Computational Thinking and Problem Solving",
+      "credits": 3,
+      "semester": 1,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "High School Certificate"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S1-CSCI-102-01",
+      "code": "CSCI 102",
+      "title": "Fundamentals of Computing I",
+      "credits": 4,
+      "semester": 1,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "High School Certificate"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S1-ENGL-002-01",
+      "code": "ENGL 002",
+      "title": "English I",
+      "credits": 0,
+      "semester": 1,
+      "termType": "regular",
+      "year": null,
+      "category": "english",
+      "prereqs": [
+        "Placement Test"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S1-MATH-121-01",
+      "code": "MATH 121",
+      "title": "Calculus I and Analytical Geometry",
+      "credits": 3,
+      "semester": 1,
+      "termType": "regular",
+      "year": null,
+      "category": "math",
+      "prereqs": [
+        "High School (Math)"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S1-PHYS-101-01",
+      "code": "PHYS 101",
+      "title": "Physics I",
+      "credits": 4,
+      "semester": 1,
+      "termType": "regular",
+      "year": null,
+      "category": "science",
+      "prereqs": [
+        "High School Certificate"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S2-CSCI-103-01",
+      "code": "CSCI 103",
+      "title": "Fundamentals of Computing II",
+      "credits": 4,
+      "semester": 2,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 102"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S2-ECEN-111-01",
+      "code": "ECEN 111",
+      "title": "Electronics and Electrical Circuits",
+      "credits": 3,
+      "semester": 2,
+      "termType": "regular",
+      "year": null,
+      "category": "science",
+      "prereqs": [
+        "PHYS 101"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S2-ENGL-003-01",
+      "code": "ENGL 003",
+      "title": "English II",
+      "credits": 0,
+      "semester": 2,
+      "termType": "regular",
+      "year": null,
+      "category": "english",
+      "prereqs": [
+        "ENGL 002"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S2-HUMA-1XX-01",
+      "code": "HUMA 1xx",
+      "title": "Humanities Elective 1",
+      "credits": 3,
+      "semester": 2,
+      "termType": "regular",
+      "year": null,
+      "category": "humanities",
+      "prereqs": [
+        "None"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S2-MATH-113-01",
+      "code": "MATH 113",
+      "title": "Discrete Mathematics",
+      "credits": 3,
+      "semester": 2,
+      "termType": "regular",
+      "year": null,
+      "category": "math",
+      "prereqs": [
+        "MATH 120 / High School Math"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S2-MATH-122-01",
+      "code": "MATH 122",
+      "title": "Calculus II",
+      "credits": 3,
+      "semester": 2,
+      "termType": "regular",
+      "year": null,
+      "category": "math",
+      "prereqs": [
+        "MATH 121"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S3-CSCI-204-01",
+      "code": "CSCI 204",
+      "title": "Data Structures and Algorithms",
+      "credits": 3,
+      "semester": 3,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 103"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S3-CSCI-211-01",
+      "code": "CSCI 211",
+      "title": "Logic Design",
+      "credits": 3,
+      "semester": 3,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "ECEN 111"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S3-CSCI-221-01",
+      "code": "CSCI 221",
+      "title": "Database Systems",
+      "credits": 3,
+      "semester": 3,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 103"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S3-ENGL-201-01",
+      "code": "ENGL 201",
+      "title": "Scientific Writing",
+      "credits": 3,
+      "semester": 3,
+      "termType": "regular",
+      "year": null,
+      "category": "english",
+      "prereqs": [
+        "ENGL 003"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S3-MATH-202-01",
+      "code": "MATH 202",
+      "title": "Probability and Statistics",
+      "credits": 3,
+      "semester": 3,
+      "termType": "regular",
+      "year": null,
+      "category": "math",
+      "prereqs": [
+        "MATH 121"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S3-MATH-223-01",
+      "code": "MATH 223",
+      "title": "Differential Equations",
+      "credits": 3,
+      "semester": 3,
+      "termType": "regular",
+      "year": null,
+      "category": "math",
+      "prereqs": [
+        "MATH 122"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S4-CSCI-212-01",
+      "code": "CSCI 212",
+      "title": "Computer Architecture",
+      "credits": 3,
+      "semester": 4,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 211"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S4-CSCI-231-01",
+      "code": "CSCI 231",
+      "title": "Analysis and Design of Algorithms",
+      "credits": 3,
+      "semester": 4,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 204"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S4-CSCI-331-01",
+      "code": "CSCI 331",
+      "title": "Introduction to Data Science",
+      "credits": 3,
+      "semester": 4,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "MATH 202"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S4-ENGL-202-01",
+      "code": "ENGL 202",
+      "title": "Communication and Presentation Skills",
+      "credits": 3,
+      "semester": 4,
+      "termType": "regular",
+      "year": null,
+      "category": "english",
+      "prereqs": [
+        "ENGL 201"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S4-MATH-321-01",
+      "code": "MATH 321",
+      "title": "Linear Algebra",
+      "credits": 3,
+      "semester": 4,
+      "termType": "regular",
+      "year": null,
+      "category": "math",
+      "prereqs": [
+        "MATH 121"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S5-CSCI-313-01",
+      "code": "CSCI 313",
+      "title": "Operating Systems",
+      "credits": 3,
+      "semester": 5,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 212"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S5-CSCI-321-01",
+      "code": "CSCI 321",
+      "title": "Software Engineering",
+      "credits": 3,
+      "semester": 5,
+      "termType": "regular",
+      "year": null,
+      "category": "basic computing",
+      "prereqs": [
+        "CSCI 103"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S5-HUMA-2XX-01",
+      "code": "HUMA 2xx",
+      "title": "Humanities Elective 2",
+      "credits": 3,
+      "semester": 5,
+      "termType": "regular",
+      "year": null,
+      "category": "humanities",
+      "prereqs": [
+        "None"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S5-SSCI-1XX-01",
+      "code": "SSCI 1xx",
+      "title": "Social Science Elective 1",
+      "credits": 3,
+      "semester": 5,
+      "termType": "regular",
+      "year": null,
+      "category": "humanities",
+      "prereqs": [
+        "None"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S6-CSCI-306-01",
+      "code": "CSCI 306",
+      "title": "Web and Mobile Development",
+      "credits": 3,
+      "semester": 6,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "CSCI 103"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S6-CSCI-333-01",
+      "code": "CSCI 333",
+      "title": "Big Data Analytics",
+      "credits": 3,
+      "semester": 6,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "CSCI 221",
+        "CSCI 331"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S6-CSCI-3XX-01",
+      "code": "CSCI 3xx",
+      "title": "Track Compulsory 1",
+      "credits": 3,
+      "semester": 6,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "Track specific"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S6-SSCI-301-01",
+      "code": "SSCI 301",
+      "title": "Project Management",
+      "credits": 3,
+      "semester": 6,
+      "termType": "regular",
+      "year": null,
+      "category": "humanities",
+      "prereqs": [
+        "Junior Standing"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S7-CSCI-442-01",
+      "code": "CSCI 442",
+      "title": "Introduction to Cloud Computing and IoT",
+      "credits": 3,
+      "semester": 7,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "CSCI 341"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S7-CSCI-471-01",
+      "code": "CSCI 471",
+      "title": "Theory of Computation and Compiler Design",
+      "credits": 3,
+      "semester": 7,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "MATH 113",
+        "CSCI 231"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S7-CSCI-493-01",
+      "code": "CSCI 493",
+      "title": "Senior Project I",
+      "credits": 3,
+      "semester": 7,
+      "termType": "regular",
+      "year": null,
+      "category": "project",
+      "prereqs": [
+        "87 Credit Hours"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S7-CSCI-AIS-4XX-01",
+      "code": "CSCI/AIS 4xx",
+      "title": "Track Compulsory 2",
+      "credits": 3,
+      "semester": 7,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "Track specific"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S7-SSCI-2XX-01",
+      "code": "SSCI 2xx",
+      "title": "Social Science Elective 2",
+      "credits": 3,
+      "semester": 7,
+      "termType": "regular",
+      "year": null,
+      "category": "humanities",
+      "prereqs": [
+        "None"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S8-CSCI-494-01",
+      "code": "CSCI 494",
+      "title": "Senior Project II",
+      "credits": 3,
+      "semester": 8,
+      "termType": "regular",
+      "year": null,
+      "category": "project",
+      "prereqs": [
+        "CSCI 493"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S8-CSCI-AIS-4XX-02",
+      "code": "CSCI/AIS 4xx",
+      "title": "Track Technical Elective 2",
+      "credits": 3,
+      "semester": 8,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "Track specific"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-S8-CSCI-AIS-4XX-03",
+      "code": "CSCI/AIS 4xx",
+      "title": "Track Technical Elective 3",
+      "credits": 3,
+      "semester": 8,
+      "termType": "regular",
+      "year": null,
+      "category": "specialization",
+      "prereqs": [
+        "Track specific"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-SUMMER-Y2-CSCI-291-01",
+      "code": "CSCI 291",
+      "title": "Industrial/Research Training I",
+      "credits": 3,
+      "semester": null,
+      "termType": "summer",
+      "year": 2,
+      "category": "training",
+      "prereqs": [
+        "SOPH"
+      ]
+    },
+    {
+      "program": "general",
+      "slotId": "GENERAL-SUMMER-Y3-CSCI-391-01",
+      "code": "CSCI 391",
+      "title": "Industrial/Research Training II",
+      "credits": 3,
+      "semester": null,
+      "termType": "summer",
+      "year": 3,
+      "category": "training",
+      "prereqs": [
+        "JUN"
+      ]
+    }
+  ],
+  "expectedPeriods": [
+    1,
+    2,
+    3,
+    4,
+    "Y2",
+    5,
+    6,
+    "Y3",
+    7,
+    8
+  ],
+  "expectedCredits": [
+    14,
+    16,
+    18,
+    18,
+    3,
+    18,
+    18,
+    3,
+    15,
+    15
+  ]
+}

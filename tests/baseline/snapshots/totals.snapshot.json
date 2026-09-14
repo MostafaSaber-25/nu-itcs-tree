@@ -1,0 +1,29 @@
+{
+  "generatedAt": "deterministic",
+  "programs": {
+    "general": {
+      "total": 138,
+      "gpa": 132,
+      "training": 6,
+      "project": 6
+    },
+    "ai": {
+      "total": 138,
+      "gpa": 132,
+      "training": 6,
+      "project": 6
+    },
+    "biomedical": {
+      "total": 138,
+      "gpa": 132,
+      "training": 6,
+      "project": 6
+    },
+    "cybersecurity": {
+      "total": 138,
+      "gpa": 132,
+      "training": 6,
+      "project": 6
+    }
+  }
+}

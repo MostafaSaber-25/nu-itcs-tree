@@ -1,0 +1,64 @@
+{
+  "rules": {
+    "ais301": {
+      "type": "all",
+      "rules": [
+        {
+          "type": "course",
+          "code": "AIS 201"
+        },
+        {
+          "type": "course",
+          "code": "CSCI 331"
+        }
+      ]
+    },
+    "bmd101": {
+      "type": "any",
+      "rules": [
+        {
+          "type": "course",
+          "code": "BMD 100"
+        },
+        {
+          "type": "standing",
+          "value": "science_section"
+        }
+      ]
+    },
+    "bmd102": {
+      "type": "course",
+      "code": "BMD 101",
+      "concurrent": true
+    },
+    "bmd211": {
+      "type": "course",
+      "code": "CSCI 231",
+      "concurrent": true
+    },
+    "training": {
+      "type": "standing",
+      "value": "sophomore"
+    },
+    "project": {
+      "type": "min_credit_hours",
+      "value": 87
+    },
+    "project2": {
+      "type": "course",
+      "code": "AIS 493"
+    }
+  },
+  "periods": [
+    1,
+    2,
+    3,
+    4,
+    "Y2",
+    5,
+    6,
+    "Y3",
+    7,
+    8
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "scripts": {
+    "test:baseline": "node tests/baseline.js && node tests/runtime-harness.js"
+  }
+}

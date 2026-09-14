@@ -1,0 +1,12 @@
+{
+  "generatedAt": "deterministic",
+  "invariants": [
+    "curriculum map",
+    "status controls",
+    "filters",
+    "catalog search/filter/status",
+    "duplicate AIS401 visibility",
+    "program switching",
+    "recommendation rendering"
+  ]
+}

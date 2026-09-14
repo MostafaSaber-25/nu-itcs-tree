@@ -1,0 +1,711 @@
+{
+  "generatedAt": "deterministic",
+  "periods": {
+    "general": [
+      {
+        "period": 1,
+        "slotIds": [
+          "GENERAL-S1-CSCI-101-01",
+          "GENERAL-S1-CSCI-102-01",
+          "GENERAL-S1-ENGL-002-01",
+          "GENERAL-S1-MATH-121-01",
+          "GENERAL-S1-PHYS-101-01"
+        ],
+        "codes": [
+          "CSCI 101",
+          "CSCI 102",
+          "ENGL 002",
+          "MATH 121",
+          "PHYS 101"
+        ],
+        "credits": 14
+      },
+      {
+        "period": 2,
+        "slotIds": [
+          "GENERAL-S2-CSCI-103-01",
+          "GENERAL-S2-ECEN-111-01",
+          "GENERAL-S2-ENGL-003-01",
+          "GENERAL-S2-HUMA-1XX-01",
+          "GENERAL-S2-MATH-113-01",
+          "GENERAL-S2-MATH-122-01"
+        ],
+        "codes": [
+          "CSCI 103",
+          "ECEN 111",
+          "ENGL 003",
+          "HUMA 1xx",
+          "MATH 113",
+          "MATH 122"
+        ],
+        "credits": 16
+      },
+      {
+        "period": 3,
+        "slotIds": [
+          "GENERAL-S3-CSCI-204-01",
+          "GENERAL-S3-CSCI-211-01",
+          "GENERAL-S3-CSCI-221-01",
+          "GENERAL-S3-ENGL-201-01",
+          "GENERAL-S3-MATH-202-01",
+          "GENERAL-S3-MATH-223-01"
+        ],
+        "codes": [
+          "CSCI 204",
+          "CSCI 211",
+          "CSCI 221",
+          "ENGL 201",
+          "MATH 202",
+          "MATH 223"
+        ],
+        "credits": 18
+      },
+      {
+        "period": 4,
+        "slotIds": [
+          "CS-S3-AIS-201-01",
+          "GENERAL-S4-CSCI-212-01",
+          "GENERAL-S4-CSCI-231-01",
+          "GENERAL-S4-CSCI-331-01",
+          "GENERAL-S4-ENGL-202-01",
+          "GENERAL-S4-MATH-321-01"
+        ],
+        "codes": [
+          "AIS 201",
+          "CSCI 212",
+          "CSCI 231",
+          "CSCI 331",
+          "ENGL 202",
+          "MATH 321"
+        ],
+        "credits": 18
+      },
+      {
+        "period": "Y2",
+        "slotIds": [
+          "GENERAL-SUMMER-Y2-CSCI-291-01"
+        ],
+        "codes": [
+          "CSCI 291"
+        ],
+        "credits": 3
+      },
+      {
+        "period": 5,
+        "slotIds": [
+          "CS-S6-CSCI-341-01",
+          "CS-S6-CSCI-351-01",
+          "GENERAL-S5-CSCI-313-01",
+          "GENERAL-S5-CSCI-321-01",
+          "GENERAL-S5-HUMA-2XX-01",
+          "GENERAL-S5-SSCI-1XX-01"
+        ],
+        "codes": [
+          "CSCI 341",
+          "CSCI 351",
+          "CSCI 313",
+          "CSCI 321",
+          "HUMA 2xx",
+          "SSCI 1xx"
+        ],
+        "credits": 18
+      },
+      {
+        "period": 6,
+        "slotIds": [
+          "CS-S5-AIS-301-01",
+          "CS-S5-CSEC-211-01",
+          "GENERAL-S6-CSCI-306-01",
+          "GENERAL-S6-CSCI-333-01",
+          "GENERAL-S6-CSCI-3XX-01",
+          "GENERAL-S6-SSCI-301-01"
+        ],
+        "codes": [
+          "AIS 301",
+          "CSEC 211",
+          "CSCI 306",
+          "CSCI 333",
+          "CSCI 3xx",
+          "SSCI 301"
+        ],
+        "credits": 18
+      },
+      {
+        "period": "Y3",
+        "slotIds": [
+          "GENERAL-SUMMER-Y3-CSCI-391-01"
+        ],
+        "codes": [
+          "CSCI 391"
+        ],
+        "credits": 3
+      },
+      {
+        "period": 7,
+        "slotIds": [
+          "GENERAL-S7-CSCI-442-01",
+          "GENERAL-S7-CSCI-471-01",
+          "GENERAL-S7-CSCI-493-01",
+          "GENERAL-S7-CSCI-AIS-4XX-01",
+          "GENERAL-S7-SSCI-2XX-01"
+        ],
+        "codes": [
+          "CSCI 442",
+          "CSCI 471",
+          "CSCI 493",
+          "CSCI/AIS 4xx",
+          "SSCI 2xx"
+        ],
+        "credits": 15
+      },
+      {
+        "period": 8,
+        "slotIds": [
+          "CS-S7-CSCI-472-01",
+          "CS-S7-CSCI-AIS-4XX-01",
+          "GENERAL-S8-CSCI-494-01",
+          "GENERAL-S8-CSCI-AIS-4XX-02",
+          "GENERAL-S8-CSCI-AIS-4XX-03"
+        ],
+        "codes": [
+          "CSCI 472",
+          "CSCI/AIS 4xx",
+          "CSCI 494",
+          "CSCI/AIS 4xx",
+          "CSCI/AIS 4xx"
+        ],
+        "credits": 15
+      }
+    ],
+    "ai": [
+      {
+        "period": 1,
+        "slotIds": [
+          "AI-S1-CSCI-101-01",
+          "AI-S1-CSCI-102-01",
+          "AI-S1-ENGL-002-01",
+          "AI-S1-MATH-121-01",
+          "AI-S1-PHYS-101-01"
+        ],
+        "codes": [
+          "CSCI 101",
+          "CSCI 102",
+          "ENGL 002",
+          "MATH 121",
+          "PHYS 101"
+        ],
+        "credits": 14
+      },
+      {
+        "period": 2,
+        "slotIds": [
+          "AI-S2-CSCI-103-01",
+          "AI-S2-ECEN-111-01",
+          "AI-S2-ENGL-003-01",
+          "AI-S2-HUMA-1XX-01",
+          "AI-S2-MATH-113-01",
+          "AI-S2-MATH-122-01"
+        ],
+        "codes": [
+          "CSCI 103",
+          "ECEN 111",
+          "ENGL 003",
+          "HUMA 1xx",
+          "MATH 113",
+          "MATH 122"
+        ],
+        "credits": 16
+      },
+      {
+        "period": 3,
+        "slotIds": [
+          "AI-S3-CSCI-204-01",
+          "AI-S3-CSCI-211-01",
+          "AI-S3-CSCI-221-01",
+          "AI-S3-ENGL-201-01",
+          "AI-S3-MATH-202-01",
+          "AI-S3-MATH-223-01"
+        ],
+        "codes": [
+          "CSCI 204",
+          "CSCI 211",
+          "CSCI 221",
+          "ENGL 201",
+          "MATH 202",
+          "MATH 223"
+        ],
+        "credits": 18
+      },
+      {
+        "period": 4,
+        "slotIds": [
+          "AI-S4-AIS-201-01",
+          "AI-S4-CSCI-212-01",
+          "AI-S4-CSCI-231-01",
+          "AI-S4-CSCI-331-01",
+          "AI-S4-ENGL-202-01",
+          "AI-S4-MATH-321-01"
+        ],
+        "codes": [
+          "AIS 201",
+          "CSCI 212",
+          "CSCI 231",
+          "CSCI 331",
+          "ENGL 202",
+          "MATH 321"
+        ],
+        "credits": 18
+      },
+      {
+        "period": "Y2",
+        "slotIds": [
+          "AI-SUMMER-Y2-AIS-291-01"
+        ],
+        "codes": [
+          "AIS 291"
+        ],
+        "credits": 3
+      },
+      {
+        "period": 5,
+        "slotIds": [
+          "AI-S5-AIS-301-01",
+          "AI-S5-CSCI-313-01",
+          "AI-S5-CSCI-321-01",
+          "AI-S5-CSCI-341-01",
+          "AI-S5-CSCI-351-01",
+          "AI-S5-HUMA-2XX-01"
+        ],
+        "codes": [
+          "AIS 301",
+          "CSCI 313",
+          "CSCI 321",
+          "CSCI 341",
+          "CSCI 351",
+          "HUMA 2xx"
+        ],
+        "credits": 18
+      },
+      {
+        "period": 6,
+        "slotIds": [
+          "AI-S6-AIS-302-01",
+          "AI-S6-AIS-323-01",
+          "AI-S6-AIS-3XX-01",
+          "AI-S6-AIS-460-01",
+          "AI-S6-CSCI-333-01",
+          "AI-S6-SSCI-301-01"
+        ],
+        "codes": [
+          "AIS 302",
+          "AIS 323",
+          "AIS 3xx",
+          "AIS 460",
+          "CSCI 333",
+          "SSCI 301"
+        ],
+        "credits": 18
+      },
+      {
+        "period": "Y3",
+        "slotIds": [
+          "AI-SUMMER-Y3-AIS-391-01"
+        ],
+        "codes": [
+          "AIS 391"
+        ],
+        "credits": 3
+      },
+      {
+        "period": 7,
+        "slotIds": [
+          "AI-S7-AIS-401-01",
+          "AI-S7-AIS-401-02",
+          "AI-S7-AIS-493-01",
+          "AI-S7-AIS-CSCI-4XX-01",
+          "AI-S7-SSCI-1XX-01"
+        ],
+        "codes": [
+          "AIS 401",
+          "AIS 401",
+          "AIS 493",
+          "AIS/CSCI 4xx",
+          "SSCI 1xx"
+        ],
+        "credits": 15
+      },
+      {
+        "period": 8,
+        "slotIds": [
+          "AI-S8-AIS-494-01",
+          "AI-S8-AIS-CSCI-4XX-01",
+          "AI-S8-AIS-CSCI-4XX-02",
+          "AI-S8-CSCI-471-01",
+          "AI-S8-SSCI-2XX-01"
+        ],
+        "codes": [
+          "AIS 494",
+          "AIS/CSCI 4xx",
+          "AIS/CSCI 4xx",
+          "CSCI 471",
+          "SSCI 2xx"
+        ],
+        "credits": 15
+      }
+    ],
+    "biomedical": [
+      {
+        "period": 1,
+        "slotIds": [
+          "BIOMEDICAL-S1-CSCI-101-01",
+          "BIOMEDICAL-S1-CSCI-102-01",
+          "BIOMEDICAL-S1-ENGL-002-01",
+          "BIOMEDICAL-S1-MATH-120-01",
+          "BIOMEDICAL-S2-BMD-101-01",
+          "BIOMEDICAL-S2-PHYS-101-01"
+        ],
+        "codes": [
+          "CSCI 101",
+          "CSCI 102",
+          "ENGL-101",
+          "MATH 120",
+          "BMD 101",
+          "PHYS 101"
+        ],
+        "credits": 14
+      },
+      {
+        "period": 2,
+        "slotIds": [
+          "BIOMEDICAL-S1-MATH-113-01",
+          "BIOMEDICAL-S1-MATH-121-01",
+          "BIOMEDICAL-S2-BMD-102-01",
+          "BIOMEDICAL-S2-CSCI-103-01",
+          "BIOMEDICAL-S2-ENGL-003-01",
+          "BIOMEDICAL-S2-HUMA-1XX-01"
+        ],
+        "codes": [
+          "MATH 113",
+          "MATH 121",
+          "BMD 102",
+          "CSCI 103",
+          "ENGL-102",
+          "HUMA 1xx"
+        ],
+        "credits": 16
+      },
+      {
+        "period": 3,
+        "slotIds": [
+          "BIOMEDICAL-S3-BMD-203-01",
+          "BIOMEDICAL-S3-BMD-241-01",
+          "BIOMEDICAL-S3-CSCI-204-01",
+          "BIOMEDICAL-S3-ENGL-201-01",
+          "BIOMEDICAL-S3-MATH-122-01",
+          "BIOMEDICAL-S3-MATH-321-01"
+        ],
+        "codes": [
+          "BMD 203",
+          "BMD 241",
+          "CSCI 204",
+          "ENGL 201",
+          "MATH 122",
+          "MATH 321"
+        ],
+        "credits": 18
+      },
+      {
+        "period": 4,
+        "slotIds": [
+          "BIOMEDICAL-S4-BMD-211-01",
+          "BIOMEDICAL-S4-CSCI-221-01",
+          "BIOMEDICAL-S4-CSCI-231-01",
+          "BIOMEDICAL-S4-HUMA-2XX-01",
+          "BIOMEDICAL-S4-MATH-202-01",
+          "BIOMEDICAL-S4-MATH-303-01"
+        ],
+        "codes": [
+          "BMD 211",
+          "CSCI 221",
+          "CSCI 231",
+          "HUMA 2xx",
+          "MATH 202",
+          "MATH 303"
+        ],
+        "credits": 18
+      },
+      {
+        "period": "Y2",
+        "slotIds": [
+          "BIOMEDICAL-SUMMER-Y2-BMD-291-01"
+        ],
+        "codes": [
+          "BMD 291"
+        ],
+        "credits": 3
+      },
+      {
+        "period": 5,
+        "slotIds": [
+          "BIOMEDICAL-S5-BMD-321-01",
+          "BIOMEDICAL-S5-CSCI-313-01",
+          "BIOMEDICAL-S5-CSCI-321-01",
+          "BIOMEDICAL-S5-CSCI-331-01",
+          "BIOMEDICAL-S5-CSCI-381-01",
+          "BIOMEDICAL-S5-ENGL-202-01"
+        ],
+        "codes": [
+          "BMD 321",
+          "CSCI 313",
+          "CSCI 321",
+          "CSCI 331",
+          "CSCI 381",
+          "ENGL 202"
+        ],
+        "credits": 18
+      },
+      {
+        "period": 6,
+        "slotIds": [
+          "BIOMEDICAL-S6-AIS-201-01",
+          "BIOMEDICAL-S6-BMD-323-01",
+          "BIOMEDICAL-S6-BMD-3XX-01",
+          "BIOMEDICAL-S6-BMD-3XX-02",
+          "BIOMEDICAL-S6-CSCI-351-01",
+          "BIOMEDICAL-S6-SSCI-1XX-01"
+        ],
+        "codes": [
+          "AIS 201",
+          "BMD 323",
+          "BMD 3xx",
+          "BMD 3xx",
+          "CSCI 351",
+          "SSCI 1xx"
+        ],
+        "credits": 18
+      },
+      {
+        "period": "Y3",
+        "slotIds": [
+          "BIOMEDICAL-SUMMER-Y3-BMD-391-01"
+        ],
+        "codes": [
+          "BMD 391"
+        ],
+        "credits": 3
+      },
+      {
+        "period": 7,
+        "slotIds": [
+          "BIOMEDICAL-S7-AIS-305-01",
+          "BIOMEDICAL-S7-BMD-493-01",
+          "BIOMEDICAL-S7-BMD-4XX-01",
+          "BIOMEDICAL-S7-CSCI-341-01",
+          "BIOMEDICAL-S7-SSCI-301-01"
+        ],
+        "codes": [
+          "AIS 305",
+          "BMD 493",
+          "BMD 4xx",
+          "CSCI 341",
+          "SSCI 301"
+        ],
+        "credits": 15
+      },
+      {
+        "period": 8,
+        "slotIds": [
+          "BIOMEDICAL-S8-BMD-431-01",
+          "BIOMEDICAL-S8-BMD-494-01",
+          "BIOMEDICAL-S8-BMD-4XX-01",
+          "BIOMEDICAL-S8-CSCI-471-01",
+          "BIOMEDICAL-S8-SSCI-2XX-01"
+        ],
+        "codes": [
+          "BMD 431",
+          "BMD 494",
+          "BMD 4xx",
+          "CSCI 471",
+          "SSCI 2xx"
+        ],
+        "credits": 15
+      }
+    ],
+    "cybersecurity": [
+      {
+        "period": 1,
+        "slotIds": [
+          "CYBERSECURITY-S1-CSCI-101-01",
+          "CYBERSECURITY-S1-CSCI-102-01",
+          "CYBERSECURITY-S1-ENGL-002-01",
+          "CYBERSECURITY-S1-MATH-121-01",
+          "CYBERSECURITY-S1-PHYS-101-01"
+        ],
+        "codes": [
+          "CSCI 101",
+          "CSCI 102",
+          "ENGL 002",
+          "MATH 121",
+          "PHYS 101"
+        ],
+        "credits": 14
+      },
+      {
+        "period": 2,
+        "slotIds": [
+          "CYBERSECURITY-S2-CSCI-103-01",
+          "CYBERSECURITY-S2-ECEN-111-01",
+          "CYBERSECURITY-S2-ENGL-003-01",
+          "CYBERSECURITY-S2-HUMA-1XX-01",
+          "CYBERSECURITY-S2-MATH-113-01",
+          "CYBERSECURITY-S2-MATH-122-01"
+        ],
+        "codes": [
+          "CSCI 103",
+          "ECEN 111",
+          "ENGL 003",
+          "HUMA 1xx",
+          "MATH 113",
+          "MATH 122"
+        ],
+        "credits": 16
+      },
+      {
+        "period": 3,
+        "slotIds": [
+          "CYBERSECURITY-S3-CSCI-204-01",
+          "CYBERSECURITY-S3-CSCI-211-01",
+          "CYBERSECURITY-S3-CSCI-221-01",
+          "CYBERSECURITY-S3-ENGL-201-01",
+          "CYBERSECURITY-S3-MATH-202-01",
+          "CYBERSECURITY-S3-MATH-223-01"
+        ],
+        "codes": [
+          "CSCI 204",
+          "CSCI 211",
+          "CSCI 221",
+          "ENGL 201",
+          "MATH 202",
+          "MATH 223"
+        ],
+        "credits": 18
+      },
+      {
+        "period": 4,
+        "slotIds": [
+          "CYBERSECURITY-S4-AIS-201-01",
+          "CYBERSECURITY-S4-CSCI-212-01",
+          "CYBERSECURITY-S4-CSCI-231-01",
+          "CYBERSECURITY-S4-CSEC-211-01",
+          "CYBERSECURITY-S4-ENGL-202-01",
+          "CYBERSECURITY-S4-MATH-321-01"
+        ],
+        "codes": [
+          "AIS 201",
+          "CSCI 212",
+          "CSCI 231",
+          "CSEC 211",
+          "ENGL 202",
+          "MATH 321"
+        ],
+        "credits": 18
+      },
+      {
+        "period": "Y2",
+        "slotIds": [
+          "CYBERSECURITY-SUMMER-Y2-CSEC-291-01"
+        ],
+        "codes": [
+          "CSEC 291"
+        ],
+        "credits": 3
+      },
+      {
+        "period": 5,
+        "slotIds": [
+          "CYBERSECURITY-S5-CSCI-313-01",
+          "CYBERSECURITY-S5-CSCI-321-01",
+          "CYBERSECURITY-S5-CSCI-341-01",
+          "CYBERSECURITY-S5-CSCI-351-01",
+          "CYBERSECURITY-S5-CSEC-311-01",
+          "CYBERSECURITY-S5-SSCI-1XX-01"
+        ],
+        "codes": [
+          "CSCI 313",
+          "CSCI 321",
+          "CSCI 341",
+          "CSCI 351",
+          "CSEC 311",
+          "SSCI 1xx"
+        ],
+        "credits": 18
+      },
+      {
+        "period": 6,
+        "slotIds": [
+          "CYBERSECURITY-S6-CSEC-312-01",
+          "CYBERSECURITY-S6-CSEC-321-01",
+          "CYBERSECURITY-S6-CSEC-341-01",
+          "CYBERSECURITY-S6-CSEC-3XX-4XX-01",
+          "CYBERSECURITY-S6-CSEC-4XX-01",
+          "CYBERSECURITY-S6-SSCI-301-01"
+        ],
+        "codes": [
+          "CSEC 312",
+          "CSEC 321",
+          "CSEC 341",
+          "CSEC 3xx/4xx",
+          "CSEC 4xx",
+          "SSCI 301"
+        ],
+        "credits": 18
+      },
+      {
+        "period": "Y3",
+        "slotIds": [
+          "CYBERSECURITY-SUMMER-Y3-CSEC-391-01"
+        ],
+        "codes": [
+          "CSEC 391"
+        ],
+        "credits": 3
+      },
+      {
+        "period": 7,
+        "slotIds": [
+          "CYBERSECURITY-S7-CSEC-431-01",
+          "CYBERSECURITY-S7-CSEC-493-01",
+          "CYBERSECURITY-S7-CSEC-4XX-01",
+          "CYBERSECURITY-S7-HUMA-1XX-2XX-01",
+          "CYBERSECURITY-S7-SSCI-2XX-01"
+        ],
+        "codes": [
+          "CSEC 431",
+          "CSEC 493",
+          "CSEC 4xx",
+          "HUMA 1xx/2xx",
+          "SSCI 2xx"
+        ],
+        "credits": 15
+      },
+      {
+        "period": 8,
+        "slotIds": [
+          "CYBERSECURITY-S8-CSEC-432-01",
+          "CYBERSECURITY-S8-CSEC-433-01",
+          "CYBERSECURITY-S8-CSEC-494-01",
+          "CYBERSECURITY-S8-CSEC-4XX-01",
+          "CYBERSECURITY-S8-CSEC-4XX-02"
+        ],
+        "codes": [
+          "CSEC 432",
+          "CSEC 433",
+          "CSEC 494",
+          "CSEC 4xx",
+          "CSEC 4xx"
+        ],
+        "credits": 15
+      }
+    ]
+  }
+}

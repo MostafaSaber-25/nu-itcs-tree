@@ -1,0 +1,16 @@
+{
+  "generatedAt": "deterministic",
+  "storageKey": "nu_itcs_progress_v1",
+  "identity": [
+    "program",
+    "slotId"
+  ],
+  "statuses": [
+    "not_started",
+    "in_progress",
+    "completed"
+  ],
+  "transitions": [
+    "not_started -> in_progress -> completed -> not_started"
+  ]
+}
